@@ -33,6 +33,13 @@
     if (ev.key === "ArrowLeft") show(idx - 1);
   });
 
+  // ----- copy email -----
+  document.querySelectorAll("button.copy").forEach((b) => b.addEventListener("click", async () => {
+    try { await navigator.clipboard.writeText(b.dataset.copy); b.textContent = "Copied"; }
+    catch { b.textContent = "Select & copy"; }
+    setTimeout(() => (b.textContent = "Copy"), 2000);
+  }));
+
   // ----- highlight the section you're in -----
   const navLinks = new Map([...document.querySelectorAll(".topbar nav a")].map((a) => [a.hash.slice(1), a]));
   const io = new IntersectionObserver((entries) => {
@@ -42,7 +49,8 @@
       const a = navLinks.get(en.target.id);
       if (a) {
         a.classList.add("is-on");
-        a.scrollIntoView({ block: "nearest", inline: "center", behavior: "smooth" });
+        const nav = a.closest("nav");
+        nav.scrollTo({ left: a.offsetLeft - nav.clientWidth / 2 + a.offsetWidth / 2 });
       }
     });
   }, { rootMargin: "-45% 0px -50% 0px" });
