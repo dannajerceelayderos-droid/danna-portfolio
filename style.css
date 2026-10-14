@@ -98,7 +98,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .marquee b { font-size: .7em; vertical-align: .12em; }
 @keyframes marquee { to { transform: translateX(-50%); } }
 
-.board-inner { background: #fff; padding: clamp(12px, 2.5vw, 32px); }
+.board-inner { background: var(--pink); padding: clamp(16px, 3vw, 40px); }
 .about-art { width: 100%; height: auto; }
 .board-inner-old {
   position: relative;
