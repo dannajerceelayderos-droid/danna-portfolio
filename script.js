@@ -55,4 +55,51 @@
     });
   }, { rootMargin: "-45% 0px -50% 0px" });
   document.querySelectorAll("section.work").forEach((s) => io.observe(s));
+  // ----- sparkle trail behind the strawberry cursor -----
+  const fine = matchMedia("(hover: hover) and (pointer: fine)").matches;
+  const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (fine && !still) {
+    const layer = document.createElement("div");
+    layer.className = "sparkle-layer";
+    layer.setAttribute("aria-hidden", "true");
+    document.body.appendChild(layer);
+    const colors = ["#ff599b", "#fffc7a", "#8c52ff", "#ffb3c6", "#556fff", "#ffe08a"];
+    const star = '<svg viewBox="0 0 64 64"><path d="M32 2c2.6 16 8 22 30 30-22 8-27.4 14-30 30-2.6-16-8-22-30-30 22-8 27.4-14 30-30z" fill="currentColor"/></svg>';
+    let last = 0, lx = 0, ly = 0;
+    addEventListener("pointermove", (ev) => {
+      const now = performance.now();
+      const dist = Math.hypot(ev.clientX - lx, ev.clientY - ly);
+      if (now - last < 28 || dist < 6) return;
+      last = now; lx = ev.clientX; ly = ev.clientY;
+      if (layer.childElementCount > 40) layer.firstChild.remove();
+      const s = document.createElement("span");
+      s.className = "spk";
+      s.innerHTML = star;
+      s.style.left = ev.clientX + "px";
+      s.style.top = ev.clientY + 10 + "px";
+      s.style.setProperty("--s", 8 + Math.random() * 10 + "px");
+      s.style.setProperty("--k", colors[(Math.random() * colors.length) | 0]);
+      s.style.setProperty("--dx", (Math.random() - 0.5) * 30 + "px");
+      s.style.setProperty("--dy", 12 + Math.random() * 26 + "px");
+      s.addEventListener("animationend", () => s.remove());
+      layer.appendChild(s);
+    }, { passive: true });
+    // a little burst when you click
+    addEventListener("pointerdown", (ev) => {
+      for (let i = 0; i < 8; i++) {
+        const s = document.createElement("span");
+        const a = (i / 8) * Math.PI * 2;
+        s.className = "spk";
+        s.innerHTML = star;
+        s.style.left = ev.clientX + "px";
+        s.style.top = ev.clientY + "px";
+        s.style.setProperty("--s", "12px");
+        s.style.setProperty("--k", colors[i % colors.length]);
+        s.style.setProperty("--dx", Math.cos(a) * 46 + "px");
+        s.style.setProperty("--dy", Math.sin(a) * 46 + "px");
+        s.addEventListener("animationend", () => s.remove());
+        layer.appendChild(s);
+      }
+    }, { passive: true });
+  }
 })();
