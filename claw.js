@@ -52,7 +52,7 @@
     glass: new THREE.MeshPhysicalMaterial({ color: "#ffffff", roughness: 0.04, metalness: 0, transparent: true, opacity: 0.1, envMapIntensity: 1.4, clearcoat: 1, depthWrite: false }),
     acrylic: new THREE.MeshPhysicalMaterial({ color: "#ffe6f1", roughness: 0.06, transparent: true, opacity: 0.32, clearcoat: 1, depthWrite: false }),
     cable: new THREE.MeshStandardMaterial({ color: "#e9e6ee", metalness: 0.9, roughness: 0.3 }),
-    coil: new THREE.MeshStandardMaterial({ color: "#8c5cff", roughness: 0.4 }),
+    coil: new THREE.MeshStandardMaterial({ color: "#ff6fae", roughness: 0.4 }),
     purple: phys("#5a20d8", { envMapIntensity: 0.35, clearcoat: 0.6 }),
     yellow: phys("#ffcc2e", { roughness: 0.22, clearcoat: 1, envMapIntensity: 0.6 }),
     dark: new THREE.MeshStandardMaterial({ color: "#d63a86", roughness: 0.6 }),
@@ -137,15 +137,12 @@
   mesh(RB(X * 2 + 2.6, 12.2, 0.4, 0.15), M.shellDeep, 0, 2.5, -Z - 0.25, machine);
   // inner frame around the window
   const fz = Z + 0.42;
-  mesh(RB(X * 2 + 0.5, 0.34, 0.5, 0.14), M.purple, 0, TOP + 0.05, fz, machine);
-  mesh(RB(X * 2 + 0.5, 0.34, 0.5, 0.14), M.purple, 0, -0.05, fz, machine);
-  mesh(RB(0.34, TOP + 0.4, 0.5, 0.14), M.purple, -X - 0.08, TOP / 2, fz, machine);
-  mesh(RB(0.34, TOP + 0.4, 0.5, 0.14), M.purple, X + 0.08, TOP / 2, fz, machine);
+  mesh(RB(X * 2 + 0.5, 0.34, 0.5, 0.14), M.shellDeep, 0, TOP + 0.05, fz, machine);
+  mesh(RB(X * 2 + 0.5, 0.34, 0.5, 0.14), M.shellDeep, 0, -0.05, fz, machine);
+  mesh(RB(0.34, TOP + 0.4, 0.5, 0.14), M.shellDeep, -X - 0.08, TOP / 2, fz, machine);
+  mesh(RB(0.34, TOP + 0.4, 0.5, 0.14), M.shellDeep, X + 0.08, TOP / 2, fz, machine);
   const glass = mesh(new THREE.PlaneGeometry(X * 2, TOP), M.glass, 0, TOP / 2, Z + 0.3, machine, false);
   glass.renderOrder = 10;
-  // yellow trim stripe along the base, purple pinstripe under the header
-  mesh(RB(X * 2 + 2.95, 0.3, 0.16, 0.08, 2), M.yellow, 0, -3.15, depth / 2 + 0.02, machine, false);
-  mesh(RB(X * 2 + 2.95, 0.14, 0.12, 0.05, 2), M.purple, 0, TOP + 2.15, depth / 2 + 0.02, machine, false);
   // screws
   [[-X - 0.72, TOP + 1.9], [X + 0.72, TOP + 1.9], [-X - 0.72, -3.2], [X + 0.72, -3.2]].forEach(([x, y]) => {
     const s = mesh(new THREE.CylinderGeometry(0.11, 0.11, 0.06, 20), M.chromeDark, x, y, depth / 2 + 0.01, machine, false);
@@ -154,16 +151,16 @@
 
   // marquee sign with chasing bulbs
   function drawSign(c, w, h) {
-    c.fillStyle = "#7a3ff0"; c.fillRect(0, 0, w, h);
+    c.fillStyle = "#ff5fa8"; c.fillRect(0, 0, w, h);
+    c.fillStyle = "#ffffff";
     c.font = "150px Anton, Impact, sans-serif";
     c.textAlign = "center"; c.textBaseline = "middle";
-    c.fillStyle = "#ff5fa8"; c.fillText("GRAB A PRIZE", w / 2 + 7, h / 2 + 16);
-    c.fillStyle = "#ffd23f"; c.fillText("GRAB A PRIZE", w / 2, h / 2 + 8);
+    c.fillText("GRAB A PRIZE", w / 2, h / 2 + 8);
   }
   const signTex = canvasTex(1600, 260, (c, w, h) => {
     drawSign(c, w, h);
   });
-  const sign = mesh(RB(7.6, 1.25, 0.2, 0.1), [M.purple, M.purple, M.purple, M.purple, new THREE.MeshStandardMaterial({ map: signTex, emissive: "#ffffff", emissiveMap: signTex, emissiveIntensity: 0.25, roughness: 0.4 }), M.purple], 0, TOP + 1.2, depth / 2 + 0.06, machine);
+  const sign = mesh(RB(7.6, 1.25, 0.2, 0.1), [M.shellDeep, M.shellDeep, M.shellDeep, M.shellDeep, new THREE.MeshStandardMaterial({ map: signTex, emissive: "#ffffff", emissiveMap: signTex, emissiveIntensity: 0.25, roughness: 0.4 }), M.shellDeep], 0, TOP + 1.2, depth / 2 + 0.06, machine);
   sign.geometry.groups.forEach((g, i) => (g.materialIndex = i));
   const bulbs = [];
   const bulbGeo = new THREE.SphereGeometry(0.075, 14, 10);
@@ -184,9 +181,9 @@
     c.fillStyle = "#ff5fa8";
     c.font = "78px Anton, Impact, sans-serif";
     c.textBaseline = "middle";
-    c.textAlign = "left"; c.fillStyle = "#7a3ff0"; c.fillText("2026", 120, h / 2 + 4);
-    c.textAlign = "center"; c.fillStyle = "#ff3d95"; c.fillText("DANNA JERCEE", w * 0.3, h / 2 + 4);
-    c.textAlign = "right"; c.fillStyle = "#7a3ff0"; c.fillText("DESIGNER ★", w - 120, h / 2 + 4);
+    c.textAlign = "left"; c.fillText("2026", 120, h / 2 + 4);
+    c.textAlign = "center"; c.fillText("DANNA JERCEE", w * 0.3, h / 2 + 4);
+    c.textAlign = "right"; c.fillText("DESIGNER ★", w - 120, h / 2 + 4);
   });
   const lip = mesh(new THREE.BoxGeometry(X * 2 - 0.1, 0.72, 0.12), [M.box, M.box, M.box, M.box, new THREE.MeshStandardMaterial({ map: lipTex, roughness: 0.5 }), M.box], 0, 0.36, Z + 0.12, machine);
 
@@ -203,7 +200,7 @@
   const hole = mesh(new THREE.PlaneGeometry(cw - 0.1, cd - 0.1), new THREE.MeshStandardMaterial({ color: "#d94f92", roughness: 0.9 }), 0, 0.01, 0, chute, false);
   hole.rotation.x = -Math.PI / 2;
   const door = mesh(RB(3.2, 1.9, 0.3, 0.3), M.shellPale, -3.3, -2.0, depth / 2 + 0.02, machine);
-  mesh(RB(2.7, 1.45, 0.3, 0.24), new THREE.MeshStandardMaterial({ color: "#5a20d8", roughness: 0.6 }), -3.3, -2.0, depth / 2 + 0.06, machine, false);
+  mesh(RB(2.7, 1.45, 0.3, 0.24), new THREE.MeshStandardMaterial({ color: "#f06aa9", roughness: 0.7 }), -3.3, -2.0, depth / 2 + 0.06, machine, false);
   const flap = mesh(RB(2.6, 1.3, 0.06, 0.2), M.acrylic, -3.3, -2.0, depth / 2 + 0.24, machine, false);
 
   // control panel
@@ -221,15 +218,15 @@
   const stick = new THREE.Group();
   joy.add(stick);
   mesh(new THREE.CylinderGeometry(0.07, 0.08, 1.05, 16), M.chrome, 0, 0.52, 0, stick);
-  const ball = mesh(new THREE.SphereGeometry(0.42, 40, 28), M.yellow, 0, 1.18, 0, stick);
+  const ball = mesh(new THREE.SphereGeometry(0.42, 40, 28), M.ball, 0, 1.18, 0, stick);
   ball.userData.ctrl = "joystick";
   const btnSmall = new THREE.Group(); btnSmall.position.set(1.0, 0.32, 0.1); panel.add(btnSmall);
   mesh(new THREE.CylinderGeometry(0.36, 0.38, 0.1, 32), M.chrome, 0, 0, 0, btnSmall);
-  const capS = mesh(new THREE.CylinderGeometry(0.27, 0.27, 0.16, 32), M.purple, 0, 0.1, 0, btnSmall);
+  const capS = mesh(new THREE.CylinderGeometry(0.27, 0.27, 0.16, 32), M.btnPink, 0, 0.1, 0, btnSmall);
   capS.userData.ctrl = "grab";
   const btnBig = new THREE.Group(); btnBig.position.set(2.35, 0.32, 0.1); panel.add(btnBig);
   mesh(new THREE.CylinderGeometry(0.56, 0.6, 0.12, 40), M.chrome, 0, 0, 0, btnBig);
-  const capB = mesh(new THREE.CylinderGeometry(0.44, 0.44, 0.2, 40), M.yellow, 0, 0.12, 0, btnBig);
+  const capB = mesh(new THREE.CylinderGeometry(0.44, 0.44, 0.2, 40), M.btnPale, 0, 0.12, 0, btnBig);
   capB.userData.ctrl = "grab";
 
   // ---------- gantry + claw ----------
@@ -741,7 +738,7 @@
     // redraw canvas textures now that fonts are ready
     prizes.forEach((p) => { const m = p.g.children[0].material[4]; m.map = labelTex(p); m.needsUpdate = true; });
     redraw(signTex, drawSign);
-    redraw(lipTex, (c, w, h) => { c.fillStyle = "#fff4f9"; c.fillRect(0, 0, w, h); c.fillStyle = "#ff5fa8"; c.font = "78px Anton, Impact, sans-serif"; c.textBaseline = "middle"; c.textAlign = "left"; c.fillStyle = "#7a3ff0"; c.fillText("2026", 120, h / 2 + 4); c.textAlign = "center"; c.fillStyle = "#ff3d95"; c.fillText("DANNA JERCEE", w * 0.3, h / 2 + 4); c.textAlign = "right"; c.fillStyle = "#7a3ff0"; c.fillText("DESIGNER ★", w - 120, h / 2 + 4); });
+    redraw(lipTex, (c, w, h) => { c.fillStyle = "#fff4f9"; c.fillRect(0, 0, w, h); c.fillStyle = "#ff5fa8"; c.font = "78px Anton, Impact, sans-serif"; c.textBaseline = "middle"; c.textAlign = "left"; c.fillText("2026", 120, h / 2 + 4); c.textAlign = "center"; c.fillText("DANNA JERCEE", w * 0.3, h / 2 + 4); c.textAlign = "right"; c.fillText("DESIGNER ★", w - 120, h / 2 + 4); });
     redraw(backTex, (c, w, h) => {
       const g = c.createLinearGradient(0, 0, 0, h); g.addColorStop(0, "#ffe3f0"); g.addColorStop(0.55, "#ffc6df"); g.addColorStop(1, "#ff9fca");
       c.fillStyle = g; c.fillRect(0, 0, w, h); c.fillStyle = "#ff5fa8"; c.font = "56px Anton, Impact, sans-serif"; c.textBaseline = "top";
