@@ -89,6 +89,68 @@
     update();
   });
 
+  // ----- page-turning brochure -----
+  document.querySelectorAll("[data-fb]").forEach((fb) => {
+    const book = fb.querySelector("[data-book]");
+    const leaves = [...book.querySelectorAll(".fb-leaf")];
+    const states = JSON.parse(fb.dataset.states);
+    const label = fb.querySelector("[data-label]");
+    const dots = [...fb.querySelectorAll("[data-go]")];
+    const hd = fb.querySelector("[data-hd]");
+    const prev = fb.querySelector("[data-prev]"), next = fb.querySelector("[data-next]");
+    let k = 0;
+    const set = (to) => {
+      to = Math.max(0, Math.min(leaves.length, to));
+      if (to === k) return;
+      const dir = to > k ? 1 : -1;
+      // flip the leaves between k and to, staggered so several pages fan over
+      const list = dir > 0 ? leaves.slice(k, to) : leaves.slice(to, k).reverse();
+      list.forEach((leaf, n) => setTimeout(() => {
+        leaf.classList.add("is-moving");
+        leaf.classList.toggle("is-flipped", dir > 0);
+        clearTimeout(leaf._t);
+        leaf._t = setTimeout(() => leaf.classList.remove("is-moving"), 1000);
+      }, n * 140));
+      k = to;
+      render();
+    };
+    const render = () => {
+      book.classList.toggle("is-closed", k === 0);
+      book.classList.toggle("is-end", k === leaves.length);
+      const st = states[k];
+      if (label) label.textContent = st.label;
+      dots.forEach((d, i) => { d.classList.toggle("is-on", i === k); d.setAttribute("aria-current", i === k ? "true" : "false"); });
+      if (prev) prev.disabled = k === 0;
+      if (next) next.disabled = k === leaves.length;
+      if (hd) { hd.href = "img/" + st.hd + ".webp"; hd.dataset.w = st.w; hd.dataset.h = st.h; hd.querySelector("img").alt = book.getAttribute("aria-label").split(".")[0] + ", " + st.label; }
+    };
+    prev && prev.addEventListener("click", () => set(k - 1));
+    next && next.addEventListener("click", () => set(k + 1));
+    dots.forEach((d) => d.addEventListener("click", () => set(+d.dataset.go)));
+    book.addEventListener("keydown", (ev) => {
+      if (ev.key === "ArrowRight") { ev.preventDefault(); set(k + 1); }
+      if (ev.key === "ArrowLeft") { ev.preventDefault(); set(k - 1); }
+    });
+    // click a page edge or swipe/drag across the book
+    let sx = null, sy = 0, swiped = false;
+    book.addEventListener("pointerdown", (ev) => { sx = ev.clientX; sy = ev.clientY; swiped = false; });
+    book.addEventListener("pointerup", (ev) => {
+      if (sx === null) return;
+      const dx = ev.clientX - sx, dy = ev.clientY - sy;
+      sx = null;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) { swiped = true; set(k + (dx < 0 ? 1 : -1)); }
+    });
+    book.addEventListener("click", (ev) => {
+      if (swiped) { swiped = false; return; }
+      const r = book.getBoundingClientRect();
+      const mid = r.left + r.width / 2;
+      if (k === 0) set(1);
+      else if (k === leaves.length) set(k - 1);
+      else set(k + (ev.clientX > mid ? 1 : -1));
+    });
+    render();
+  });
+
   // ----- copy email -----
   document.querySelectorAll("button.copy").forEach((b) => b.addEventListener("click", async () => {
     try { await navigator.clipboard.writeText(b.dataset.copy); b.textContent = "Copied"; }
