@@ -33,6 +33,62 @@
     if (ev.key === "ArrowLeft") show(idx - 1);
   });
 
+  // ----- HD ad carousels: native swipe + mouse drag + arrows + dots -----
+  document.querySelectorAll("[data-car]").forEach((car) => {
+    const track = car.querySelector("[data-track]");
+    const slides = [...track.children];
+    const dots = [...car.querySelectorAll("[data-dot]")];
+    const cur = car.querySelector("[data-cur]");
+    const prev = car.querySelector("[data-prev]"), next = car.querySelector("[data-next]");
+    let idx = -1;
+    const center = (el) => el.offsetLeft + el.offsetWidth / 2 - track.clientWidth / 2;
+    const go = (i, smooth = true) => {
+      i = Math.max(0, Math.min(slides.length - 1, i));
+      track.scrollTo({ left: center(slides[i]), behavior: smooth && !matchMedia("(prefers-reduced-motion: reduce)").matches ? "smooth" : "auto" });
+    };
+    const update = () => {
+      const mid = track.scrollLeft + track.clientWidth / 2;
+      let best = 0, bd = Infinity;
+      slides.forEach((s, i) => { const d = Math.abs(s.offsetLeft + s.offsetWidth / 2 - mid); if (d < bd) { bd = d; best = i; } });
+      if (best === idx) return;
+      idx = best;
+      slides.forEach((s, i) => s.classList.toggle("is-on", i === idx));
+      dots.forEach((d, i) => { d.classList.toggle("is-on", i === idx); d.setAttribute("aria-current", i === idx ? "true" : "false"); });
+      if (cur) cur.textContent = idx + 1;
+      if (prev) prev.disabled = idx === 0;
+      if (next) next.disabled = idx === slides.length - 1;
+    };
+    let raf = 0;
+    track.addEventListener("scroll", () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(update); }, { passive: true });
+    addEventListener("resize", () => go(Math.max(idx, 0), false));
+    prev && prev.addEventListener("click", () => go(idx - 1));
+    next && next.addEventListener("click", () => go(idx + 1));
+    dots.forEach((d, i) => d.addEventListener("click", () => go(i)));
+    track.addEventListener("keydown", (ev) => {
+      if (ev.key === "ArrowRight") { ev.preventDefault(); go(idx + 1); }
+      if (ev.key === "ArrowLeft") { ev.preventDefault(); go(idx - 1); }
+    });
+    // mouse drag (touch already swipes natively)
+    let down = null, moved = false;
+    track.addEventListener("pointerdown", (ev) => {
+      if (ev.pointerType !== "mouse" || ev.button !== 0) return;
+      down = { x: ev.clientX, left: track.scrollLeft }; moved = false;
+    });
+    addEventListener("pointermove", (ev) => {
+      if (!down) return;
+      const dx = ev.clientX - down.x;
+      if (!moved && Math.abs(dx) > 6) { moved = true; track.classList.add("is-drag"); }
+      if (moved) track.scrollLeft = down.left - dx;
+    });
+    addEventListener("pointerup", () => {
+      if (!down) return;
+      down = null;
+      if (moved) { track.classList.remove("is-drag"); go(idx); }
+    });
+    track.addEventListener("click", (ev) => { if (moved) { ev.preventDefault(); ev.stopPropagation(); moved = false; } }, true);
+    update();
+  });
+
   // ----- copy email -----
   document.querySelectorAll("button.copy").forEach((b) => b.addEventListener("click", async () => {
     try { await navigator.clipboard.writeText(b.dataset.copy); b.textContent = "Copied"; }
