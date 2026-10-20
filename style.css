@@ -507,6 +507,16 @@ button { font: inherit; color: inherit; }
 .ad-car-gummies .ad-car-head h3 { color: #b0101f; }
 @media (max-width: 760px) { .gummy-canvas { inset: -40px 0 -30px; width: 100%; height: calc(100% + 70px); } }
 
+
+/* Agility Writer: blue stage */
+.ad-car-blue { isolation: isolate; padding: clamp(18px, 3vw, 34px) clamp(16px, 3vw, 40px) clamp(22px, 3vw, 30px); margin-inline: calc(-1 * clamp(16px, 3vw, 40px)); border-radius: 30px; overflow: hidden;
+  --c: #1a5cf0;
+  background: radial-gradient(50% 60% at 50% 45%, #ffffff 0%, transparent 70%), linear-gradient(rgb(26 92 240 / .07) 1px, transparent 1px) 0 0 / 32px 32px, linear-gradient(90deg, rgb(26 92 240 / .07) 1px, transparent 1px) 0 0 / 32px 32px, linear-gradient(160deg, #eaf1ff, #d6e4ff); }
+.ad-car-blue .ad-view { margin-inline: calc(-1 * clamp(16px, 3vw, 40px)); }
+.ad-car-blue .ad-car-head h3 { color: #1446c8; }
+.ad-car-blue .ad-slide .zoom { box-shadow: 0 30px 60px -28px rgb(20 70 200 / .55), 0 0 0 6px #fff; }
+.ad-car-blue .ad-nav:hover { background: #1a5cf0; }
+
 /* websites */
 .site-card {
   position: relative; display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: clamp(20px, 3vw, 44px); align-items: center;
