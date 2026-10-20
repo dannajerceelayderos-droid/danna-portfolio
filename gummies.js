@@ -92,9 +92,9 @@
   // ---------- layout: keep things in the margins around the slides ----------
   // [type, x (fraction of half-width), y (fraction of half-height), z, scale]
   const SPOTS = [
-    ["bear", -0.96, 0.28, 1.5, 0.8], ["apple", 0.95, 0.78, 0.5, 0.8], ["bear", 0.97, -0.15, 2.2, 0.65],
+    ["bear", -0.96, 0.28, 1.5, 0.8], ["apple", 0.95, 0.78, 0.5, 0.8], ["bear", 0.97, -0.45, 2.2, 0.65],
     ["apple", -0.95, -0.62, 1.2, 0.85], ["bear", -0.55, -1.0, 3, 0.5], ["bear", 0.62, -0.98, 1, 0.7],
-    ["bear", 0.32, 1.02, -1, 0.45], ["apple", -0.22, 1.05, -2, 0.45], ["bear", -0.99, -0.2, -1.5, 0.5],
+    ["bear", 0.32, 1.02, -1, 0.45], ["apple", 0.08, 1.1, -2, 0.45], ["bear", -0.99, -0.2, -1.5, 0.5],
   ];
   const items = SPOTS.map(([type, fx, fy, z, s], i) => {
     const o = type === "bear" ? bear() : apple();
