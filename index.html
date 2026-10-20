@@ -14,7 +14,7 @@
 <link rel="preload" href="fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/silkscreen-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
 <meta name="theme-color" content="#ffe2ee">
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
 <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -104,19 +104,78 @@
     </div>
   </section>
 
-  <section class="about" id="about" aria-label="About Danna">
-    <div class="board">
-      <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>Player 1 <b>★</b></span><span>About me <b>★</b></span><span>Player 1 <b>★</b></span><span>About me <b>★</b></span><span>Player 1 <b>★</b></span><span>About me <b>★</b></span><span>Player 1 <b>★</b></span><span>About me <b>★</b></span><span>Player 1 <b>★</b></span><span>About me <b>★</b></span><span>Player 1 <b>★</b></span><span>About me <b>★</b></span><span>Player 1 <b>★</b></span><span>About me <b>★</b></span><span>Player 1 <b>★</b></span><span>About me <b>★</b></span><span>Player 1 <b>★</b></span><span>About me <b>★</b></span><span>Player 1 <b>★</b></span><span>About me <b>★</b></span></div></div>
-      <div class="board-inner">
-        <h2 class="sr-only">Hi, I'm Danna</h2>
-        <img class="about-art" src="img/about.webp?v=2" srcset="img/t/about.webp?v=2 1400w, img/about.webp?v=2 2400w" sizes="(max-width: 1240px) 100vw, 1240px" width="2400" height="1386" alt="Hi, I'm Danna. I'm a UI/UX and graphic designer who loves mixing creativity and strategy to craft designs that don't just look good; they work. From websites and funnels to social media campaigns. I enjoy turning ideas into engaging, scroll-stopping visuals that tell a story. I thrive in collaborative spaces, love experimenting with new design tools (yes, even AI!), and I'm always chasing that sweet spot between playful and professional.">
+
+  <section class="about" id="about" aria-labelledby="about-t">
+    <div class="sb">
+      <div class="sb-paper sb-paper-a" style="clip-path:polygon(0.0% 0.5%,3.8% 1.2%,7.7% 0.8%,11.5% 1.3%,15.4% 1.4%,19.2% 0.1%,23.1% 0.0%,26.9% 1.8%,30.8% 0.6%,34.6% 0.5%,38.5% 2.2%,42.3% 1.0%,46.2% 1.8%,50.0% 1.0%,53.8% 1.4%,57.7% 0.3%,61.5% 1.4%,65.4% 1.9%,69.2% 1.2%,73.1% 1.6%,76.9% 1.5%,80.8% 0.1%,84.6% 1.7%,88.5% 1.3%,92.3% 0.7%,96.2% 0.1%,100.0% 1.9%,99.0% 3.8%,98.4% 7.7%,98.1% 11.5%,98.4% 15.4%,98.0% 19.2%,99.1% 23.1%,98.2% 26.9%,99.0% 30.8%,97.9% 34.6%,98.1% 38.5%,99.8% 42.3%,99.7% 46.2%,99.5% 50.0%,97.9% 53.8%,99.0% 57.7%,98.6% 61.5%,99.3% 65.4%,98.9% 69.2%,99.2% 73.1%,99.2% 76.9%,98.7% 80.8%,98.7% 84.6%,98.0% 88.5%,98.5% 92.3%,98.0% 96.2%,100.0% 98.1%,96.2% 97.8%,92.3% 98.5%,88.5% 99.6%,84.6% 98.1%,80.8% 97.9%,76.9% 98.0%,73.1% 98.7%,69.2% 98.4%,65.4% 99.5%,61.5% 98.2%,57.7% 98.7%,53.8% 99.4%,50.0% 99.9%,46.2% 98.1%,42.3% 97.8%,38.5% 99.8%,34.6% 98.2%,30.8% 99.1%,26.9% 99.7%,23.1% 99.4%,19.2% 98.3%,15.4% 98.1%,11.5% 99.9%,7.7% 98.6%,3.8% 99.9%,0.0% 98.4%,0.7% 96.2%,1.9% 92.3%,2.2% 88.5%,1.1% 84.6%,2.2% 80.8%,0.7% 76.9%,0.2% 73.1%,1.3% 69.2%,0.1% 65.4%,0.4% 61.5%,0.9% 57.7%,1.3% 53.8%,0.3% 50.0%,0.1% 46.2%,1.9% 42.3%,0.7% 38.5%,2.1% 34.6%,2.0% 30.8%,0.8% 26.9%,1.0% 23.1%,1.1% 19.2%,1.4% 15.4%,1.3% 11.5%,1.2% 7.7%,1.4% 3.8%)" aria-hidden="true"></div>
+      <div class="sb-paper sb-paper-b" style="clip-path:polygon(0.0% 1.0%,3.8% 0.5%,7.7% 2.0%,11.5% 0.2%,15.4% 1.6%,19.2% 1.1%,23.1% 0.2%,26.9% 1.5%,30.8% 0.1%,34.6% 1.3%,38.5% 0.2%,42.3% 0.3%,46.2% 1.3%,50.0% 2.5%,53.8% 0.4%,57.7% 0.7%,61.5% 1.9%,65.4% 2.8%,69.2% 1.7%,73.1% 1.2%,76.9% 2.9%,80.8% 0.1%,84.6% 2.6%,88.5% 0.9%,92.3% 0.4%,96.2% 0.4%,100.0% 0.9%,97.6% 3.8%,99.5% 7.7%,98.3% 11.5%,98.1% 15.4%,98.9% 19.2%,98.4% 23.1%,99.8% 26.9%,99.8% 30.8%,99.4% 34.6%,98.0% 38.5%,98.7% 42.3%,99.1% 46.2%,98.2% 50.0%,98.6% 53.8%,99.1% 57.7%,97.6% 61.5%,97.9% 65.4%,99.3% 69.2%,98.3% 73.1%,98.4% 76.9%,97.4% 80.8%,97.8% 84.6%,99.1% 88.5%,97.1% 92.3%,99.6% 96.2%,100.0% 98.7%,96.2% 97.7%,92.3% 99.5%,88.5% 98.5%,84.6% 99.9%,80.8% 98.0%,76.9% 97.7%,73.1% 98.3%,69.2% 97.4%,65.4% 99.1%,61.5% 97.9%,57.7% 98.2%,53.8% 98.3%,50.0% 98.6%,46.2% 97.5%,42.3% 97.2%,38.5% 98.6%,34.6% 98.0%,30.8% 99.8%,26.9% 97.9%,23.1% 98.1%,19.2% 97.0%,15.4% 97.5%,11.5% 99.1%,7.7% 98.8%,3.8% 98.0%,0.0% 99.9%,1.4% 96.2%,0.5% 92.3%,0.4% 88.5%,0.2% 84.6%,2.3% 80.8%,0.4% 76.9%,0.7% 73.1%,1.2% 69.2%,2.6% 65.4%,0.2% 61.5%,1.3% 57.7%,1.6% 53.8%,2.7% 50.0%,2.5% 46.2%,2.6% 42.3%,0.8% 38.5%,1.2% 34.6%,1.1% 30.8%,2.7% 26.9%,2.9% 23.1%,0.5% 19.2%,0.5% 15.4%,0.7% 11.5%,0.7% 7.7%,1.5% 3.8%)" aria-hidden="true"><svg class="sb-camera" viewBox="0 0 140 100" aria-hidden="true"><defs><pattern id="dots" width="5" height="5" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.4" fill="#e0508f"/></pattern></defs>
+      <rect x="6" y="24" width="128" height="70" rx="12" fill="url(#dots)" stroke="#e0508f" stroke-width="3"/><rect x="40" y="10" width="36" height="18" rx="5" fill="#ffd2e6" stroke="#e0508f" stroke-width="3"/><rect x="104" y="14" width="18" height="12" rx="3" fill="#ffd2e6" stroke="#e0508f" stroke-width="3"/>
+      <circle cx="72" cy="58" r="27" fill="#fff" stroke="#e0508f" stroke-width="3"/><circle cx="72" cy="58" r="18" fill="url(#dots)" stroke="#e0508f" stroke-width="3"/><circle cx="66" cy="52" r="5" fill="#fff"/></svg></div>
+      <span class="sb-tape sb-tape-a" aria-hidden="true"></span>
+      <span class="sb-tape sb-tape-b" aria-hidden="true"></span>
+
+      <img class="sb-logo" src="logo.svg?v=3" width="120" height="120" alt="" aria-hidden="true">
+
+      <div class="sb-pocket" aria-hidden="true">
+        <div class="sb-receipt" style="clip-path:polygon(0.0% 0.0%,7.1% 0.0%,14.3% 0.0%,21.4% 0.0%,28.6% 0.0%,35.7% 0.0%,42.9% 0.0%,50.0% 0.0%,57.1% 0.0%,64.3% 0.0%,71.4% 0.0%,78.6% 0.0%,85.7% 0.0%,92.9% 0.0%,100.0% 0.0%,100.0% 7.1%,100.0% 14.3%,100.0% 21.4%,100.0% 28.6%,100.0% 35.7%,100.0% 42.9%,100.0% 50.0%,100.0% 57.1%,100.0% 64.3%,100.0% 71.4%,100.0% 78.6%,100.0% 85.7%,100.0% 92.9%,100.0% 98.4%,92.9% 98.0%,85.7% 96.8%,78.6% 98.4%,71.4% 98.2%,64.3% 97.9%,57.1% 99.4%,50.0% 98.2%,42.9% 97.8%,35.7% 97.2%,28.6% 99.7%,21.4% 98.9%,14.3% 99.7%,7.1% 97.2%,0.0% 97.6%,0.0% 92.9%,0.0% 85.7%,0.0% 78.6%,0.0% 71.4%,0.0% 64.3%,0.0% 57.1%,0.0% 50.0%,0.0% 42.9%,0.0% 35.7%,0.0% 28.6%,0.0% 21.4%,0.0% 14.3%,0.0% 7.1%)">
+          <p>⋆ ˚｡ ☆ ˚</p>
+          <p>ORDER #2026 FOR</p>
+          <p>A NEW CLIENT ♡</p>
+          <p class="r-row"><span>1× UI/UX</span><span>✓</span></p>
+          <p class="r-row"><span>1× GRAPHICS</span><span>✓</span></p>
+          <p class="r-row"><span>1× WEBSITE</span><span>✓</span></p>
+          <p>SAN PABLO CITY, LAGUNA</p>
+          <p class="r-bar"></p>
+        </div>
+        <div class="sb-chibi c1"><img src="img/t/MAGzzQqiZWI.webp" width="490" height="558" alt="" loading="lazy" decoding="async"></div>
+        <div class="sb-chibi c2"><img src="img/t/MAGzzUEXqrk.webp" width="490" height="543" alt="" loading="lazy" decoding="async"></div>
+        <span class="sb-gingham-card"></span>
       </div>
 
-      <ul class="contact">
-        <li><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#i-mail"/></svg><span>Email</span><p class="email-row"><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=dannajerceelayderos@gmail.com" target="_blank" rel="noopener">dannajerceelayderos@gmail.com</a><button type="button" class="copy" data-copy="dannajerceelayderos@gmail.com">Copy</button></p></li>
-        <li><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#i-pin"/></svg><span>Location</span><p>San Pablo City, Laguna, Philippines</p></li>
-        <li><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#i-phone"/></svg><span>Phone</span><a href="tel:+639219636667">0921 963 6667</a></li>
-      </ul>
+      <figure class="sb-polaroid sb-main">
+        <svg class="sb-clip" viewBox="0 0 120 150" aria-hidden="true">
+      <defs><linearGradient id="clipG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff9cc8"/><stop offset="1" stop-color="#f0629f"/></linearGradient>
+      <linearGradient id="wireG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#d9d4dc"/><stop offset=".5" stop-color="#ffffff"/><stop offset="1" stop-color="#b9b2bf"/></linearGradient></defs>
+      <path d="M34 66 V18 a10 10 0 0 1 10 -10 h32 a10 10 0 0 1 10 10 V66" fill="none" stroke="url(#wireG)" stroke-width="6" stroke-linecap="round"/>
+      <path d="M44 66 V28 h32 V66" fill="none" stroke="#a49cab" stroke-width="2.5" opacity=".5"/>
+      <path d="M14 70 h92 l-8 72 a6 6 0 0 1 -6 5 H28 a6 6 0 0 1 -6 -5 Z" fill="url(#clipG)"/>
+      <path d="M14 70 h92 l-2 16 H16 Z" fill="#ffc3dd" opacity=".75"/>
+      <rect x="22" y="128" width="76" height="6" rx="3" fill="#d94d8b" opacity=".35"/>
+    </svg>
+        <span class="sb-flags" aria-hidden="true"><i></i><i></i><i></i></span>
+        <div class="sb-photo"><img src="img/t/me1.webp" width="760" height="673" alt="Danna resting her cheek on her arm" loading="lazy" decoding="async"></div>
+        <figcaption>hi, it's me ♡</figcaption>
+        <svg class="sb-patch" viewBox="0 0 100 100" aria-hidden="true"><defs><pattern id="ging" width="12" height="12" patternUnits="userSpaceOnUse"><rect width="12" height="12" fill="#fff"/><rect width="6" height="12" fill="#ff8fc0" opacity=".55"/><rect width="12" height="6" fill="#ff8fc0" opacity=".55"/></pattern></defs>
+      <path d="M50 6 C53 6 56 30 62 34 C68 38 93 35 94 39 C95 43 74 55 72 61 C70 67 81 89 77 92 C73 95 55 78 50 78 C45 78 27 95 23 92 C19 89 30 67 28 61 C26 55 5 43 6 39 C7 35 32 38 38 34 C44 30 47 6 50 6 Z" fill="url(#ging)" stroke="#f079b0" stroke-width="2"/><path d="M50 6 C53 6 56 30 62 34 C68 38 93 35 94 39 C95 43 74 55 72 61 C70 67 81 89 77 92 C73 95 55 78 50 78 C45 78 27 95 23 92 C19 89 30 67 28 61 C26 55 5 43 6 39 C7 35 32 38 38 34 C44 30 47 6 50 6 Z" fill="none" stroke="#e0508f" stroke-width="1.6" stroke-dasharray="4 3" transform="translate(50 52) scale(.84) translate(-50 -52)"/></svg>
+      </figure>
+
+      <figure class="sb-polaroid sb-small">
+        <span class="sb-tape sb-tape-c" aria-hidden="true"></span>
+        <div class="sb-photo"><img src="img/t/me2.webp" width="760" height="673" alt="Danna looking over her shoulder" loading="lazy" decoding="async"></div>
+      </figure>
+
+      <svg class="sb-star" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="starG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff9fcb"/><stop offset="1" stop-color="#ec5c9c"/></linearGradient></defs>
+      <path d="M50 4 L62 36 L96 37 L69 58 L79 92 L50 72 L21 92 L31 58 L4 37 L38 36 Z" fill="url(#starG)" stroke="#e0508f" stroke-width="2" stroke-linejoin="round"/><path d="M50 4 L62 36 L96 37 L69 58 L79 92 L50 72 L21 92 L31 58 L4 37 L38 36 Z" fill="none" stroke="#ffd2e6" stroke-width="1.6" stroke-dasharray="3 3" transform="translate(50 50) scale(.86) translate(-50 -50)"/></svg>
+
+      <div class="sb-card">
+        <h2 id="about-t" class="sb-title"><span class="sb-name">Danna Jercee</span><span class="sb-script">designer</span></h2>
+        <p class="sb-lead">I'm a UI/UX &amp; graphic designer who loves mixing creativity and strategy to craft designs that don't just look good, they <em>work</em>.</p>
+        <p class="sb-text">From websites and funnels to social media campaigns, I turn ideas into engaging, scroll-stopping visuals that tell a story. I thrive in collaborative spaces, love experimenting with new design tools (yes, even AI!), and I'm always chasing that sweet spot between playful and professional.</p>
+        <ul class="sb-contact">
+          <li><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#i-mail"/></svg><span class="sr-only">Email: </span><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=dannajerceelayderos@gmail.com" target="_blank" rel="noopener">dannajerceelayderos@gmail.com</a><button type="button" class="copy" data-copy="dannajerceelayderos@gmail.com">Copy</button></li>
+          <li><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#i-phone"/></svg><span class="sr-only">Phone: </span><a href="tel:+639219636667">0921 963 6667</a></li>
+          <li><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#i-pin"/></svg><span class="sr-only">Location: </span><span>San Pablo City, Laguna, Philippines</span></li>
+        </ul>
+        <svg class="sb-heart" viewBox="0 0 120 110" aria-hidden="true"><path d="M60 100 C30 78 8 60 10 36 C12 16 34 6 50 18 C56 22 59 28 60 32 C61 28 64 22 70 18 C86 6 108 16 110 36 C112 60 90 78 60 100 Z M60 88 C40 72 24 58 26 40 C28 26 44 22 54 32" fill="none" stroke="#b9aec2" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+
+      <div class="sb-buttons" aria-hidden="true"><svg viewBox="0 0 100 100" aria-hidden="true"><defs><radialGradient id="btnG" cx=".38" cy=".32" r=".8"><stop offset="0" stop-color="#ffc6df"/><stop offset=".6" stop-color="#ff8fc0"/><stop offset="1" stop-color="#ec5f9f"/></radialGradient></defs>
+      <circle cx="50" cy="50" r="46" fill="url(#btnG)"/><circle cx="50" cy="50" r="34" fill="none" stroke="#e45898" stroke-width="3" opacity=".55"/>
+      <g fill="#d14b88"><circle cx="40" cy="40" r="5.5"/><circle cx="60" cy="40" r="5.5"/><circle cx="40" cy="60" r="5.5"/><circle cx="60" cy="60" r="5.5"/></g></svg><svg viewBox="0 0 100 100" aria-hidden="true"><defs><radialGradient id="btnG" cx=".38" cy=".32" r=".8"><stop offset="0" stop-color="#ffc6df"/><stop offset=".6" stop-color="#ff8fc0"/><stop offset="1" stop-color="#ec5f9f"/></radialGradient></defs>
+      <circle cx="50" cy="50" r="46" fill="url(#btnG)"/><circle cx="50" cy="50" r="34" fill="none" stroke="#e45898" stroke-width="3" opacity=".55"/>
+      <g fill="#d14b88"><circle cx="40" cy="40" r="5.5"/><circle cx="60" cy="40" r="5.5"/><circle cx="40" cy="60" r="5.5"/><circle cx="60" cy="60" r="5.5"/></g></svg></div>
+      <svg class="sb-paperclip" viewBox="0 0 60 140" aria-hidden="true"><path d="M40 40 V112 a14 14 0 0 1 -28 0 V24 a10 10 0 0 1 20 0 V104 a4 4 0 0 1 -8 0 V40" fill="none" stroke="#f26aa8" stroke-width="5.5" stroke-linecap="round"/></svg>
+      <span class="sb-tape sb-tape-d" aria-hidden="true"></span>
     </div>
   </section>
 
