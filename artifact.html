@@ -1,0 +1,697 @@
+<title>Danna Layderos Portfolio</title>
+<meta name="description" content="Portfolio of Danna Jercee Layderos, a graphic and UI/UX designer in San Pablo City, Laguna. Brochures, infographics, image ads, carousels, UI/UX and websites.">
+<meta property="og:title" content="Danna Layderos · Graphic & UI/UX Designer">
+<meta property="og:description" content="Brochures, infographics, image ads, carousels, UI/UX and websites.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Figtree:wght@400;500;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>:root {
+  --cream: #fefaee;
+  --paper: #fffdf6;
+  --ink: #3d3434;
+  --ink-soft: #6b5f5f;
+  --pink: #dd3d93;
+  --pink-deep: #b8297a;
+  --yellow: #fffc7a;
+  --blue: #556fff;
+  --rule: #eadfc8;
+  --display: "Fredoka", "Baloo 2", system-ui, sans-serif;
+  --body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --hand: "Caveat", "Comic Sans MS", cursive;
+  --gutter: clamp(16px, 4vw, 48px);
+  --max: 1240px;
+  color-scheme: light;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font: 400 1.0625rem/1.6 var(--body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+html { overflow-x: clip; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+h1, h2, h3 { font-family: var(--display); font-weight: 700; line-height: 1.05; margin: 0; letter-spacing: -0.01em; }
+p { margin: 0; }
+ul { margin: 0; padding: 0; list-style: none; }
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; border-radius: 6px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip { position: absolute; left: 12px; top: -60px; z-index: 100; background: var(--ink); color: #fff; padding: 10px 16px; border-radius: 999px; text-decoration: none; }
+.skip:focus { top: 12px; }
+
+/* ---------- top bar ---------- */
+.topbar {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 40;
+  display: flex; align-items: center; gap: 20px;
+  padding: 12px var(--gutter);
+  background: color-mix(in srgb, var(--cream) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid var(--ink);
+}
+.mark { font: 700 1.6rem/1 var(--display); text-decoration: none; color: var(--pink); }
+.mark span { color: var(--ink); }
+.topbar nav { flex: 1; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+.topbar nav::-webkit-scrollbar { display: none; }
+.topbar ul { display: flex; gap: 6px; white-space: nowrap; }
+.topbar nav a {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 6px 12px; border-radius: 999px;
+  font: 600 0.9rem/1 var(--display); text-decoration: none;
+}
+.topbar nav a::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--c); }
+.topbar nav a:hover, .topbar nav a.is-on { background: color-mix(in srgb, var(--c) 16%, transparent); }
+.topbar-cta {
+  flex: none; padding: 9px 18px; border-radius: 999px;
+  background: var(--ink); color: var(--cream);
+  font: 600 0.95rem/1 var(--display); text-decoration: none;
+  box-shadow: 3px 3px 0 var(--pink);
+}
+.topbar-cta:hover { background: var(--pink); box-shadow: 3px 3px 0 var(--ink); }
+
+/* ---------- hero ---------- */
+.hero { padding: 0 0 clamp(48px, 7vw, 96px); }
+.hero-art { background: var(--cream); display: flex; justify-content: center; padding: clamp(8px, 2vw, 24px) var(--gutter) 0; }
+.hero-art img { width: min(100%, 980px); }
+
+.board {
+  position: relative;
+  margin: clamp(-60px, -4vw, -24px) auto 0;
+  width: min(100% - 2 * var(--gutter), var(--max));
+  background: var(--pink);
+  color: #fff;
+  border: 3px solid var(--ink);
+  border-radius: 28px;
+  box-shadow: 10px 10px 0 var(--ink);
+  overflow: hidden;
+}
+.marquee { background: var(--yellow); border-bottom: 3px solid var(--ink); overflow: hidden; }
+.marquee-track { display: flex; width: max-content; animation: marquee 38s linear infinite; }
+.marquee span { padding: 10px 18px; font: 700 clamp(1.1rem, 2vw, 1.5rem)/1 var(--display); white-space: nowrap; }
+.marquee span:nth-child(3n+1) { color: var(--pink); }
+.marquee span:nth-child(3n+2) { color: var(--blue); }
+.marquee span:nth-child(3n) { color: #ff7397; }
+.marquee b { font-size: .7em; vertical-align: .12em; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+.board-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(220px, 340px) auto 1fr;
+  gap: clamp(20px, 3vw, 44px);
+  align-items: start;
+  padding: clamp(28px, 4vw, 56px);
+}
+.polaroid {
+  position: relative;
+  background: #fff; padding: 12px 12px 8px;
+  border-radius: 6px;
+  transform: rotate(-4deg);
+  box-shadow: 0 14px 30px rgb(61 52 52 / .3);
+  margin-top: 18px;
+}
+.polaroid img { border-radius: 2px; aspect-ratio: 882 / 908; object-fit: cover; }
+.polaroid-cap { font: 600 1.6rem/1.2 var(--hand); color: var(--ink); text-align: center; padding-top: 6px; }
+.clip { position: absolute; width: 46px; top: -42px; left: 50%; transform: translateX(-50%) rotate(6deg); }
+.s-smile { position: absolute; width: 64px; right: -26px; bottom: 34px; transform: rotate(14deg); }
+
+.strip {
+  display: grid; gap: 8px;
+  background: #fff; padding: 8px;
+  border-radius: 6px;
+  width: clamp(84px, 9vw, 120px);
+  transform: rotate(7deg);
+  margin-top: 40px;
+  box-shadow: 0 10px 24px rgb(61 52 52 / .28);
+}
+.strip img { aspect-ratio: 1; object-fit: cover; border-radius: 2px; }
+
+.intro { max-width: 34em; }
+.intro h1 { font-size: clamp(2.8rem, 6.4vw, 5.6rem); color: #fff; text-shadow: 4px 4px 0 var(--ink); margin-bottom: .35em; }
+.intro .lede { font-size: clamp(1.15rem, 1.8vw, 1.35rem); line-height: 1.5; font-weight: 500; margin-bottom: 1em; }
+.intro em { font-family: var(--hand); font-style: normal; font-size: 1.45em; color: var(--yellow); line-height: 1; }
+.intro p { color: #fff; }
+.intro > p:not(.lede) { color: #ffe3f1; }
+.facts { display: grid; gap: 10px; margin-top: 1.6em; }
+.facts li { display: flex; gap: 12px; align-items: baseline; border-top: 2px dashed rgb(255 255 255 / .45); padding-top: 10px; color: #ffe3f1; }
+.facts span { font: 600 1.1rem/1.2 var(--display); color: #fff; min-width: 6.5em; }
+.balloons { position: absolute; width: clamp(70px, 8vw, 110px); right: clamp(12px, 3vw, 40px); top: 18px; opacity: .95; pointer-events: none; }
+
+.contact {
+  display: grid; grid-template-columns: repeat(3, auto); justify-content: space-between; gap: 18px 32px;
+  padding: 20px clamp(28px, 4vw, 56px) 26px;
+  border-top: 3px solid var(--ink);
+  background: var(--pink-deep);
+}
+.contact li { display: grid; grid-template-columns: 34px auto; column-gap: 12px; align-items: center; }
+.contact svg { grid-row: span 2; width: 34px; height: 34px; }
+.contact span { font: 600 1.15rem/1.1 var(--display); }
+.contact a, .contact p { font-weight: 700; font-size: .98rem; text-decoration: none; color: #ffe3f1; overflow-wrap: anywhere; }
+.contact a:hover { text-decoration: underline; color: #fff; }
+
+/* ---------- sections ---------- */
+.work {
+  width: min(100% - 2 * var(--gutter), var(--max));
+  margin: 0 auto;
+  padding: clamp(56px, 8vw, 112px) 0 0;
+}
+.sec-head { position: relative; margin-bottom: clamp(28px, 4vw, 48px); max-width: 760px; }
+.head-right { margin-left: auto; text-align: right; }
+.head-right .tags { justify-content: flex-end; }
+.sec-title { position: relative; font-size: clamp(2.6rem, 6vw, 4.6rem); color: var(--c); display: inline-block; }
+.sec-title span {
+  position: relative; z-index: 1; display: inline-block;
+  background: color-mix(in srgb, var(--c) 13%, var(--cream));
+  padding: .08em .38em .14em; border-radius: .4em;
+  transform: rotate(-1.5deg);
+}
+.head-right .sec-title span { transform: rotate(1.5deg); }
+/* the long rule that runs off the page, as in the Canva layout */
+.sec-title::after {
+  content: ""; position: absolute; top: 50%; height: 3px; width: 100vw;
+  background: var(--c);
+}
+.head-left .sec-title::after { left: calc(100% + 18px); }
+.head-right .sec-title::after { right: calc(100% + 18px); }
+
+.tags { display: flex; flex-wrap: wrap; margin: 18px 0 14px; }
+.tags li { font: 500 1.05rem/1 var(--display); color: var(--c); padding: 4px 14px; border-left: 1.5px solid var(--c); }
+.head-left .tags li:first-child { padding-left: 0; border-left: 0; }
+.head-right .tags li:first-child { border-left: 0; }
+.sec-intro { color: var(--ink-soft); max-width: 36em; font-size: 1.08rem; }
+.head-right .sec-intro { margin-left: auto; }
+
+.doodle { position: absolute; color: var(--c); pointer-events: none; }
+.da { width: 54px; height: 54px; top: -38px; transform: rotate(-12deg); }
+.db { width: 38px; height: 38px; bottom: -6px; opacity: .8; }
+.head-left .da { right: 12%; } .head-left .db { right: 2%; }
+.head-right .da { left: 8%; } .head-right .db { left: 0; }
+
+/* clickable images */
+.zoom { display: block; cursor: zoom-in; border-radius: 14px; }
+.zoom img { border-radius: 14px; }
+.zoom:hover img { filter: brightness(1.03); }
+
+/* collage: taped-in prints */
+.collage { position: relative; display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(14px, 2vw, 28px); align-items: center; }
+.c-item { margin: 0; position: relative; background: #fff; padding: 10px; border-radius: 18px; box-shadow: 0 10px 28px rgb(61 52 52 / .13); }
+.c-item::before {
+  content: ""; position: absolute; z-index: 2; width: 92px; height: 26px; top: -12px; left: 50%;
+  background: color-mix(in srgb, var(--c) 45%, transparent);
+  transform: translateX(-50%) rotate(-4deg);
+  border-radius: 2px;
+}
+.c-item .zoom, .c-item img { border-radius: 10px; }
+.collage-4 .c-0 { grid-column: 1 / 8; grid-row: 1; transform: rotate(-1deg); }
+.collage-4 .c-1 { grid-column: 8 / 13; grid-row: 1; transform: rotate(2.5deg); }
+.collage-4 .c-3 { grid-column: 1 / 6; grid-row: 2; transform: rotate(1.5deg); }
+.collage-4 .c-2 { grid-column: 6 / 10; grid-row: 2; transform: rotate(-2deg); }
+.brave-logo { grid-column: 10 / 13; grid-row: 2; align-self: center; transform: rotate(-8deg); }
+.collage-3 .c-0 { grid-column: 1 / 7; transform: rotate(-1.2deg); }
+.collage-3 .c-1 { grid-column: 7 / 10; transform: rotate(2deg); }
+.collage-3 .c-2 { grid-column: 10 / 13; transform: rotate(-1.5deg); }
+.collage .c-tall img { max-height: 620px; width: 100%; object-fit: contain; background: #fbf7ef; }
+
+/* justified rows: each item grows with its aspect ratio */
+.masonry, .grid { display: flex; flex-wrap: wrap; gap: clamp(10px, 1.4vw, 18px); }
+.masonry::after, .grid::after { content: ""; flex: 999 1 0; }
+.m-item { margin: 0; flex: var(--r) 1 calc(var(--r) * var(--rh, 230px)); min-width: 0; }
+.m-item .zoom { height: 100%; background: #fff; border: 2px solid var(--ink); border-radius: 16px; overflow: hidden; }
+.m-item img { width: 100%; height: 100%; object-fit: cover; border-radius: 0; }
+.m-item figcaption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.masonry .m-wide .zoom { background: color-mix(in srgb, var(--c) 6%, #fff); border-color: transparent; }
+.masonry .m-pano { flex-basis: 100%; }
+.grid { --rh: 260px; }
+.grid .m-item .zoom { background: #10101c; border-color: var(--ink); box-shadow: 5px 5px 0 var(--c); }
+
+/* stacked carousels */
+.stack { display: grid; gap: clamp(20px, 3vw, 40px); }
+.s-item { margin: 0; width: min(100%, 980px); background: #fff; padding: clamp(10px, 1.4vw, 18px); border-radius: 22px; border: 2px solid var(--ink); }
+.s-item:nth-child(odd) { justify-self: start; box-shadow: -8px 8px 0 var(--c); }
+.s-item:nth-child(even) { justify-self: end; box-shadow: 8px 8px 0 var(--c); }
+.s-item figcaption { font: 500 1rem/1.3 var(--display); color: var(--ink-soft); padding: 12px 6px 2px; }
+
+/* UI projects */
+.project { padding: clamp(24px, 3vw, 36px) 0; border-top: 2px dashed color-mix(in srgb, var(--c) 40%, var(--rule)); }
+.project:first-of-type { border-top: 0; padding-top: 0; }
+.project h3 { font-size: clamp(1.6rem, 3vw, 2.2rem); display: inline; color: var(--ink); }
+.project .kind { display: inline; margin-left: 12px; color: var(--c); font: 500 1.05rem/1 var(--display); }
+.p-body { margin-top: 20px; display: grid; gap: clamp(14px, 2vw, 24px); }
+.has-page .p-body { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); align-items: start; }
+.p-details { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; align-items: start; }
+.p-details figure { margin: 0; background: #fff; border: 1.5px solid var(--rule); border-radius: 16px; padding: 8px; }
+.p-details figure:first-child:nth-last-child(odd) { grid-column: 1 / -1; }
+.solo .p-details { grid-template-columns: 1fr; }
+.p-pages { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+
+.browser { margin: 0; border: 2px solid var(--ink); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 7px 7px 0 var(--c); }
+.browser-bar { display: flex; align-items: center; gap: 6px; padding: 9px 12px; background: var(--ink); color: #f3e9e9; font: 500 .78rem/1 var(--body); }
+.browser-bar i { width: 10px; height: 10px; border-radius: 50%; background: #ff7397; }
+.browser-bar i:nth-child(2) { background: var(--yellow); }
+.browser-bar i:nth-child(3) { background: #7be0a0; }
+.browser-bar span { margin-left: 10px; opacity: .8; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.browser-view { height: clamp(420px, 62vh, 680px); overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: var(--c) transparent; }
+.browser-view img { width: 100%; }
+.p-pages .browser-view { height: clamp(380px, 56vh, 600px); }
+
+/* websites */
+.site-card {
+  display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: clamp(20px, 3vw, 40px);
+  align-items: center;
+  padding: clamp(20px, 3vw, 36px);
+  background: color-mix(in srgb, var(--acc) 9%, var(--paper));
+  border: 2px solid var(--ink); border-radius: 28px;
+  margin-bottom: clamp(24px, 3vw, 40px);
+}
+.site-copy h3 { font-size: clamp(2rem, 4vw, 3rem); color: var(--acc); }
+.site-copy p { margin: 12px 0 22px; max-width: 26em; }
+.site-copy .host { margin: 12px 0 0; font-size: .9rem; color: var(--ink-soft); }
+.site-hero { margin: 0; border: 2px solid var(--ink); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 7px 7px 0 var(--acc); }
+.site-hero .zoom, .site-hero img { border-radius: 0; }
+.site-thumbs { grid-column: 1 / -1; display: flex; gap: 14px; }
+.site-thumbs figure { margin: 0; flex: 1 1 0; min-width: 0; background: #fff; padding: 6px; border-radius: 14px; border: 1.5px solid var(--rule); }
+.site-thumbs img { width: 100%; height: 150px; object-fit: cover; object-position: top; border-radius: 9px; }
+
+.btn {
+  display: inline-block; padding: 13px 24px; border-radius: 999px;
+  background: var(--acc, var(--pink)); color: #fff; text-decoration: none;
+  font: 600 1.05rem/1 var(--display);
+  border: 2px solid var(--ink); box-shadow: 4px 4px 0 var(--ink);
+  transition: transform .15s, box-shadow .15s;
+}
+.btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--ink); }
+.btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--ink); }
+
+/* outro */
+.outro {
+  position: relative; text-align: center;
+  width: min(100% - 2 * var(--gutter), 880px);
+  margin: clamp(80px, 10vw, 140px) auto clamp(48px, 6vw, 80px);
+  padding: clamp(36px, 5vw, 64px) clamp(20px, 4vw, 48px);
+  background: var(--yellow); border: 3px solid var(--ink); border-radius: 28px; box-shadow: 10px 10px 0 var(--pink);
+}
+.outro h2 { font-size: clamp(2.2rem, 5vw, 3.6rem); color: var(--pink); }
+.outro p { margin: 14px auto 26px; max-width: 30em; }
+.outro .btn.big { font-size: 1.25rem; padding: 16px 34px; }
+.outro .outro-alt { margin: 18px 0 0; font-size: .95rem; }
+.o-star { position: absolute; width: 64px; color: var(--pink); top: -30px; right: 8%; transform: rotate(12deg); }
+.foot { display: flex; justify-content: space-between; gap: 16px; padding: 20px var(--gutter) 32px; font-size: .9rem; color: var(--ink-soft); border-top: 2px solid var(--ink); }
+
+/* lightbox */
+.lightbox { width: 100vw; height: 100vh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: rgb(30 22 26 / .92); color: #fff; }
+.lightbox[open] { display: grid; grid-template-columns: 64px 1fr 64px; align-items: center; }
+.lightbox::backdrop { background: transparent; }
+.lightbox figure { margin: 0; height: 100vh; overflow: auto; display: grid; place-items: center; padding: 56px 0 24px; }
+.lightbox img { max-width: 100%; height: auto; border-radius: 8px; }
+.lightbox.is-tall img { max-height: none; }
+.lightbox:not(.is-tall) img { max-height: calc(100vh - 120px); width: auto; }
+.lightbox figcaption { padding: 12px; font: 500 1rem/1.3 var(--display); text-align: center; color: #f6e8ef; }
+.lightbox button { background: #fff; color: var(--ink); border: 2px solid var(--ink); width: 48px; height: 48px; border-radius: 50%; font: 600 1.7rem/1 var(--display); cursor: pointer; justify-self: center; }
+.lb-close { position: fixed; top: 14px; right: 14px; z-index: 2; }
+.lightbox button:hover { background: var(--yellow); }
+
+/* page-load moment: stickers pop onto the board */
+@media (prefers-reduced-motion: no-preference) {
+  .polaroid, .strip, .s-smile, .balloons, .clip { animation: pop .7s cubic-bezier(.3, 1.6, .5, 1) both; }
+  .strip { animation-delay: .15s; }
+  .s-smile { animation-delay: .45s; }
+  .balloons { animation: pop .7s .3s cubic-bezier(.3, 1.6, .5, 1) both, bob 5s 1.2s ease-in-out infinite; }
+  @keyframes pop { from { opacity: 0; scale: .6; } }
+  @keyframes bob { 50% { translate: 0 -8px; } }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .marquee-track { animation: none; }
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 1000px) {
+  .board-inner { grid-template-columns: minmax(180px, 280px) 1fr; }
+  .strip { display: none; }
+  .has-page .p-body { grid-template-columns: 1fr; }
+  .site-card { grid-template-columns: 1fr; }
+  .topbar-cta { display: none; }
+}
+@media (max-width: 720px) {
+  body { font-size: 1rem; }
+  .board { border-radius: 20px; box-shadow: 6px 6px 0 var(--ink); }
+  .board-inner { grid-template-columns: 1fr; }
+  .polaroid { width: min(260px, 78%); justify-self: center; }
+  .balloons { width: 64px; top: 70px; }
+  .contact { grid-template-columns: 1fr; }
+  .head-right { text-align: left; margin-left: 0; }
+  .head-right .tags { justify-content: flex-start; }
+  .head-right .tags li:first-child { padding-left: 0; }
+  .head-right .sec-intro { margin-left: 0; }
+  .head-right .sec-title::after { right: auto; left: calc(100% + 18px); }
+  .head-right .da { left: auto; right: 8%; } .head-right .db { left: auto; right: 0; }
+  .collage { grid-template-columns: 1fr 1fr; }
+  .collage .c-item, .collage .brave-logo { grid-column: auto !important; grid-row: auto !important; width: auto !important; }
+  .collage .c-0 { grid-column: 1 / -1 !important; }
+  .brave-logo { grid-column: 1 / -1 !important; width: 70%; justify-self: center; }
+  .masonry, .grid { --rh: 140px; }
+  .p-pages { grid-template-columns: 1fr; }
+  .p-details { grid-template-columns: 1fr; }
+  .site-thumbs { overflow-x: auto; }
+  .site-thumbs figure { flex: 0 0 62%; }
+  .s-item:nth-child(n) { box-shadow: 5px 5px 0 var(--c); }
+  .lightbox[open] { grid-template-columns: 1fr; }
+  .lb-prev, .lb-next { position: fixed; bottom: 16px; }
+  .lb-prev { left: 16px; } .lb-next { right: 16px; }
+}
+</style>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="d-smile" viewBox="0 0 64 64">
+      <circle cx="32" cy="32" r="28" fill="#fecd73" stroke="#3d3434" stroke-width="3"/>
+      <circle cx="23" cy="27" r="3.5" fill="#3d3434"/><circle cx="41" cy="27" r="3.5" fill="#3d3434"/>
+      <path d="M19 38c4 7 9 10 13 10s9-3 13-10" fill="none" stroke="#3d3434" stroke-width="3.5" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="d-star" viewBox="0 0 64 64">
+      <path d="M32 4c2.6 14 7.8 19.6 26 23-18.2 3.6-23.4 9.2-26 33-2.6-23.8-7.8-29.4-26-33C24.2 23.6 29.4 18 32 4z" fill="currentColor"/>
+    </symbol>
+    <symbol id="d-heart" viewBox="0 0 64 64">
+      <path d="M32 56S6 40.5 6 22.5C6 13.4 12.6 8 20 8c5.6 0 9.6 3.2 12 7.6C34.4 11.2 38.4 8 44 8c7.4 0 14 5.4 14 14.5C58 40.5 32 56 32 56z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+      <path d="M17 20c1-4 4-6 7-6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="d-squiggle" viewBox="0 0 120 40">
+      <path d="M4 26c10-18 18-18 24 0s14 18 22 0 16-18 24 0 14 18 22 0 12-16 20-4" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="d-sparkle" viewBox="0 0 64 64">
+      <g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round">
+        <path d="M32 6v14M32 44v14M6 32h14M44 32h14M14 14l9 9M41 41l9 9M50 14l-9 9M23 41l-9 9"/>
+      </g>
+    </symbol>
+    <symbol id="d-swirl" viewBox="0 0 80 80">
+      <path d="M40 40c0-4 6-4 6 0 0 8-12 8-12 0 0-12 18-12 18 0 0 16-24 16-24 0 0-20 30-20 30 0" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="d-clip" viewBox="0 0 60 90">
+      <rect x="10" y="30" width="40" height="34" rx="6" fill="#3d3434"/>
+      <path d="M16 32C14 14 22 4 30 4s16 10 14 28" fill="none" stroke="#9aa0a6" stroke-width="5"/>
+      <path d="M20 32c-1-12 4-20 10-20s11 8 10 20" fill="none" stroke="#c9ced3" stroke-width="3"/>
+    </symbol>
+    <symbol id="d-balloons" viewBox="0 0 120 200">
+      <path d="M38 92c4 30-6 60 10 100M82 86c-8 34 2 66-24 106" fill="none" stroke="#fff" stroke-width="2"/>
+      <ellipse cx="38" cy="50" rx="32" ry="40" fill="#ffb3c6"/>
+      <ellipse cx="82" cy="46" rx="32" ry="40" fill="#ffe08a"/>
+      <ellipse cx="28" cy="34" rx="7" ry="12" fill="#fff" opacity=".55"/>
+      <ellipse cx="72" cy="30" rx="7" ry="12" fill="#fff" opacity=".55"/>
+      <path d="M33 89l5 6 5-6zM77 85l5 6 5-6z" fill="#e8a33d"/>
+    </symbol>
+    <symbol id="i-mail" viewBox="0 0 32 32">
+      <rect x="3" y="7" width="26" height="18" rx="3" fill="#fff"/>
+      <path d="M4 9l12 9 12-9" fill="none" stroke="#dd3d93" stroke-width="2.5" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-pin" viewBox="0 0 32 32">
+      <path d="M16 30s10-10.5 10-18a10 10 0 0 0-20 0c0 7.5 10 18 10 18z" fill="#fff"/>
+      <circle cx="16" cy="12" r="4" fill="#dd3d93"/>
+    </symbol>
+    <symbol id="i-phone" viewBox="0 0 32 32">
+      <rect x="9" y="3" width="14" height="26" rx="3.5" fill="#fff"/>
+      <rect x="13" y="24" width="6" height="2" rx="1" fill="#dd3d93"/>
+    </symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#work">Skip to the work</a>
+
+<header class="topbar">
+  <a class="mark" href="#top">Danna<span>.</span></a>
+  <nav aria-label="Sections"><ul><li><a href="#brochure" style="--c:#ff8e51">Brochure</a></li><li><a href="#illustrated-infographic" style="--c:#dd3d93">Infographic</a></li><li><a href="#image-ads" style="--c:#8c52ff">Image Ads</a></li><li><a href="#carousel" style="--c:#dc423b">Carousel</a></li><li><a href="#ui-ux" style="--c:#7d5fff">UI UX</a></li><li><a href="#websites" style="--c:#a982b5">Websites</a></li><li><a href="#tech-infographic" style="--c:#269731">Tech infographic</a></li></ul></nav>
+  <a class="topbar-cta" href="mailto:dannajerceelayderos@gmail.com">Email me</a>
+</header>
+
+<main id="top">
+  <section class="hero" aria-label="About Danna">
+    <div class="hero-art"><img src="img/MAHU6x1MNuU.webp" width="2078" height="1556" alt="Illustrated desk setup with a computer reading Portfolio" decoding="async"></div>
+
+    <div class="board">
+      <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>about me <b>⬤</b></span><span>about me <b>⬤</b></span><span>about me <b>⬤</b></span><span>about me <b>⬤</b></span><span>about me <b>⬤</b></span><span>about me <b>⬤</b></span><span>about me <b>⬤</b></span><span>about me <b>⬤</b></span><span>about me <b>⬤</b></span><span>about me <b>⬤</b></span><span>about me <b>⬤</b></span><span>about me <b>⬤</b></span><span>about me <b>⬤</b></span><span>about me <b>⬤</b></span></div></div>
+      <div class="board-inner">
+        <div class="polaroid">
+          <svg class="clip" viewBox="0 0 60 90" aria-hidden="true"><use href="#d-clip"/></svg>
+          <img src="img/MAGzzTS1Dt8.webp" width="706" height="727" alt="Photo of Danna outdoors on a sunny day" decoding="async">
+          <p class="polaroid-cap">that's me!</p>
+          <svg class="sticker s-smile" viewBox="0 0 64 64" aria-hidden="true"><use href="#d-smile"/></svg>
+        </div>
+        <div class="strip" aria-hidden="true"><img src="img/t/MAGzzUEXqrk.webp" width="490" height="543" alt="Illustrated Danna, smiling" decoding="async" class="chibi"><img src="img/t/MAGzzQqiZWI.webp" width="490" height="558" alt="Illustrated Danna, smiling" decoding="async" class="chibi"><img src="img/t/MAGzzdd-xlQ.webp" width="491" height="533" alt="Illustrated Danna, smiling" decoding="async" class="chibi"></div>
+
+        <div class="intro">
+          <h1>Hi, I'm Danna</h1>
+          <p class="lede">I'm a UI/UX and graphic designer who mixes creativity and strategy to craft designs that don't just look good; they <em>work</em>. From websites and funnels to social media campaigns, I make things that look good and do their job.</p>
+          <p>I turn ideas into engaging, scroll-stopping visuals that tell a story. I thrive in collaborative spaces, love experimenting with new design tools (yes, even AI!), and I'm always chasing that sweet spot between playful and professional.</p>
+          <ul class="facts">
+            <li><span>5 years</span> designing remotely for international clients</li>
+            <li><span>Figma</span> UI/UX, landing pages, web apps</li>
+            <li><span>Social &amp; print</span> ads, carousels, brochures, infographics</li>
+          </ul>
+        </div>
+        <svg class="balloons" viewBox="0 0 120 200" aria-hidden="true"><use href="#d-balloons"/></svg>
+      </div>
+
+      <ul class="contact">
+        <li><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#i-mail"/></svg><span>Email</span><a href="mailto:dannajerceelayderos@gmail.com">dannajerceelayderos@gmail.com</a></li>
+        <li><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#i-pin"/></svg><span>Location</span><p>San Pablo City, Laguna, Philippines</p></li>
+        <li><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#i-phone"/></svg><span>Phone</span><a href="tel:+639219636667">0921 963 6667</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <div id="work">
+  
+  <section class="work" id="brochure" style="--c:#ff8e51" aria-labelledby="brochure-t">
+    
+    <header class="sec-head head-right">
+      <svg class="doodle da" viewBox="0 0 64 64" aria-hidden="true"><use href="#d-heart"/></svg>
+      <svg class="doodle db" viewBox="0 0 64 64" aria-hidden="true"><use href="#d-sparkle"/></svg>
+      <h2 class="sec-title" id="brochure-t"><span>Brochure</span></h2>
+      <ul class="tags"><li>2D illustration</li><li>Brochure</li><li>Layout</li><li>Mockup</li></ul>
+      <p class="sec-intro">Brave Kids: an illustrated brochure for a youth mental-wellbeing program, from cover art to the meet-the-team spread.</p>
+    </header>
+    <div class="collage collage-4"><div class="brave-logo"><img src="img/t/MAG0jcoZM3k.webp" width="1400" height="273" alt="Brave Kids" loading="lazy" decoding="async"></div><figure class="c-item c-wide c-0"><a class="zoom " href="img/MAG0Mny3lRY.webp" data-w="2400" data-h="1800" aria-label="View larger: Brave Kids brochure and booklet mockup"><img src="img/t/MAG0Mny3lRY.webp" width="1400" height="1050" alt="Brave Kids brochure and booklet mockup" loading="lazy" decoding="async"></a></figure><figure class="c-item c-tall c-1"><a class="zoom " href="img/MAG0jc00etQ.webp" data-w="2400" data-h="2924" aria-label="View larger: Brave Kids cover held in hand"><img src="img/t/MAG0jc00etQ.webp" width="1400" height="1706" alt="Brave Kids cover held in hand" loading="lazy" decoding="async"></a></figure><figure class="c-item c-tall c-2"><a class="zoom " href="img/MAG0jSgjUa4.webp" data-w="2400" data-h="2980" aria-label="View larger: Brave Kids brochure opened to the welcome spread"><img src="img/t/MAG0jSgjUa4.webp" width="1400" height="1738" alt="Brave Kids brochure opened to the welcome spread" loading="lazy" decoding="async"></a></figure><figure class="c-item c-tall c-3"><a class="zoom " href="img/MAFHQK-zDHs.webp" data-w="2400" data-h="2980" aria-label="View larger: Brave Kids meet-the-team page"><img src="img/t/MAFHQK-zDHs.webp" width="1400" height="1738" alt="Brave Kids meet-the-team page" loading="lazy" decoding="async"></a></figure></div>
+  </section>
+  <section class="work" id="illustrated-infographic" style="--c:#dd3d93" aria-labelledby="illustrated-infographic-t">
+    
+    <header class="sec-head head-left">
+      <svg class="doodle da" viewBox="0 0 64 64" aria-hidden="true"><use href="#d-squiggle"/></svg>
+      <svg class="doodle db" viewBox="0 0 64 64" aria-hidden="true"><use href="#d-star"/></svg>
+      <h2 class="sec-title" id="illustrated-infographic-t"><span>Infographic</span></h2>
+      <ul class="tags"><li>2D illustration</li><li>Layout</li><li>Mockup</li><li>Poster</li></ul>
+      <p class="sec-intro">An isometric city poster drawn by hand, built to make survey data feel like a place you can walk through.</p>
+    </header>
+    <div class="collage collage-3"><figure class="c-item c-wide c-0"><a class="zoom " href="img/MAG1H1bCoco.webp" data-w="2400" data-h="1825" aria-label="View larger: Infographic poster on a standee"><img src="img/t/MAG1H1bCoco.webp" width="1400" height="1065" alt="Infographic poster on a standee" loading="lazy" decoding="async"></a></figure><figure class="c-item c-tall c-1"><a class="zoom " href="img/MAF5S371izs.webp" data-w="1967" data-h="3277" aria-label="View larger: Confused Mes Heart infographic poster"><img src="img/t/MAF5S371izs.webp" width="1400" height="2332" alt="Confused Mes Heart infographic poster" loading="lazy" decoding="async"></a></figure><figure class="c-item c-tall c-2"><a class="zoom " href="img/MAF6BXNvDzI.webp" data-w="1538" data-h="2334" aria-label="View larger: Isometric city illustration used in the poster"><img src="img/t/MAF6BXNvDzI.webp" width="1400" height="2125" alt="Isometric city illustration used in the poster" loading="lazy" decoding="async"></a></figure></div>
+  </section>
+  <section class="work" id="image-ads" style="--c:#8c52ff" aria-labelledby="image-ads-t">
+    
+    <header class="sec-head head-right">
+      <svg class="doodle da" viewBox="0 0 64 64" aria-hidden="true"><use href="#d-swirl"/></svg>
+      <svg class="doodle db" viewBox="0 0 64 64" aria-hidden="true"><use href="#d-heart"/></svg>
+      <h2 class="sec-title" id="image-ads-t"><span>Image Ads</span></h2>
+      <ul class="tags"><li>Social ads</li><li>Campaign sets</li><li>Mockup</li></ul>
+      <p class="sec-intro">Paid and organic social sets for food, beauty, travel, tech and B2B brands, each designed as a family that reads well in the feed.</p>
+    </header>
+    <div class="masonry"><figure class="m-item m-wide" style="--r:2.243"><a class="zoom " href="img/MAG1INxB5Ug.webp" data-w="2400" data-h="1070" aria-label="View larger: Red snack campaign set on Instagram"><img src="img/t/MAG1INxB5Ug.webp" width="1400" height="624" alt="Red snack campaign set on Instagram" loading="lazy" decoding="async"></a><figcaption>Red snack campaign set on Instagram</figcaption></figure><figure class="m-item m-wide" style="--r:2.262"><a class="zoom " href="img/MAG1IN8hBCk.webp" data-w="2400" data-h="1061" aria-label="View larger: Purple tech campaign set on Instagram"><img src="img/t/MAG1IN8hBCk.webp" width="1400" height="619" alt="Purple tech campaign set on Instagram" loading="lazy" decoding="async"></a><figcaption>Purple tech campaign set on Instagram</figcaption></figure><figure class="m-item m-wide" style="--r:2.281"><a class="zoom " href="img/MAG1IEjOkmM.webp" data-w="2400" data-h="1052" aria-label="View larger: Blue B2B campaign set on Instagram"><img src="img/t/MAG1IEjOkmM.webp" width="1400" height="614" alt="Blue B2B campaign set on Instagram" loading="lazy" decoding="async"></a><figcaption>Blue B2B campaign set on Instagram</figcaption></figure><figure class="m-item m-wide" style="--r:1.361"><a class="zoom " href="img/MAG1IcdjGMg.webp" data-w="2154" data-h="1583" aria-label="View larger: Restaurant campaign set on Instagram"><img src="img/t/MAG1IcdjGMg.webp" width="1400" height="1029" alt="Restaurant campaign set on Instagram" loading="lazy" decoding="async"></a><figcaption>Restaurant campaign set on Instagram</figcaption></figure><figure class="m-item m-wide" style="--r:1.367"><a class="zoom " href="img/MAG1IDxeoZU.webp" data-w="2216" data-h="1621" aria-label="View larger: Pink beauty campaign set on Instagram"><img src="img/t/MAG1IDxeoZU.webp" width="1400" height="1024" alt="Pink beauty campaign set on Instagram" loading="lazy" decoding="async"></a><figcaption>Pink beauty campaign set on Instagram</figcaption></figure><figure class="m-item m-wide" style="--r:1.347"><a class="zoom " href="img/MAG1IXiRmHc.webp" data-w="2133" data-h="1583" aria-label="View larger: Contact-lens campaign set on Instagram"><img src="img/t/MAG1IXiRmHc.webp" width="1400" height="1039" alt="Contact-lens campaign set on Instagram" loading="lazy" decoding="async"></a><figcaption>Contact-lens campaign set on Instagram</figcaption></figure><figure class="m-item m-wide" style="--r:1.354"><a class="zoom " href="img/MAG1IbiV1cA.webp" data-w="2144" data-h="1584" aria-label="View larger: Travel booking campaign set on Instagram"><img src="img/t/MAG1IbiV1cA.webp" width="1400" height="1034" alt="Travel booking campaign set on Instagram" loading="lazy" decoding="async"></a><figcaption>Travel booking campaign set on Instagram</figcaption></figure><figure class="m-item m-sq" style="--r:1.000"><a class="zoom " href="img/MAF5V-K-5D0.webp" data-w="1600" data-h="1600" aria-label="View larger: Rizal Day post for Busybee"><img src="img/t/MAF5V-K-5D0.webp" width="1400" height="1400" alt="Rizal Day post for Busybee" loading="lazy" decoding="async"></a><figcaption>Rizal Day post for Busybee</figcaption></figure><figure class="m-item m-sq" style="--r:1.000"><a class="zoom " href="img/MAF5V_M8JYk.webp" data-w="1600" data-h="1600" aria-label="View larger: Christmas post for Busybee"><img src="img/t/MAF5V_M8JYk.webp" width="1400" height="1400" alt="Christmas post for Busybee" loading="lazy" decoding="async"></a><figcaption>Christmas post for Busybee</figcaption></figure><figure class="m-item m-sq" style="--r:1.000"><a class="zoom " href="img/MAF5Vw61oZ8.webp" data-w="1600" data-h="1600" aria-label="View larger: Feast of the Immaculate Conception post for Busybee"><img src="img/t/MAF5Vw61oZ8.webp" width="1400" height="1400" alt="Feast of the Immaculate Conception post for Busybee" loading="lazy" decoding="async"></a><figcaption>Feast of the Immaculate Conception post for Busybee</figcaption></figure><figure class="m-item m-sq" style="--r:1.000"><a class="zoom " href="img/MAF5UJqVYL4.webp" data-w="1600" data-h="1600" aria-label="View larger: Zoom partnership ad for Busybee"><img src="img/t/MAF5UJqVYL4.webp" width="1400" height="1400" alt="Zoom partnership ad for Busybee" loading="lazy" decoding="async"></a><figcaption>Zoom partnership ad for Busybee</figcaption></figure><figure class="m-item m-sq" style="--r:1.000"><a class="zoom " href="img/MAF5UKNUNDo.webp" data-w="1600" data-h="1600" aria-label="View larger: Odoo partnership ad for Busybee"><img src="img/t/MAF5UKNUNDo.webp" width="1400" height="1400" alt="Odoo partnership ad for Busybee" loading="lazy" decoding="async"></a><figcaption>Odoo partnership ad for Busybee</figcaption></figure><figure class="m-item m-sq" style="--r:1.000"><a class="zoom " href="img/MAF5ULbbgjE.webp" data-w="1600" data-h="1600" aria-label="View larger: Quote post for Busybee"><img src="img/t/MAF5ULbbgjE.webp" width="1400" height="1400" alt="Quote post for Busybee" loading="lazy" decoding="async"></a><figcaption>Quote post for Busybee</figcaption></figure><figure class="m-item m-sq" style="--r:1.000"><a class="zoom " href="img/MAF5UNtWqBU.webp" data-w="1600" data-h="1600" aria-label="View larger: Quote post for Busybee"><img src="img/t/MAF5UNtWqBU.webp" width="1400" height="1400" alt="Quote post for Busybee" loading="lazy" decoding="async"></a><figcaption>Quote post for Busybee</figcaption></figure><figure class="m-item m-pano" style="--r:2.817"><a class="zoom " href="img/MAGzCIRjKQA.webp" data-w="2400" data-h="852" aria-label="View larger: Wall of image ads designed over the years"><img src="img/t/MAGzCIRjKQA.webp" width="1400" height="497" alt="Wall of image ads designed over the years" loading="lazy" decoding="async"></a><figcaption>Wall of image ads designed over the years</figcaption></figure></div>
+  </section>
+  <section class="work" id="carousel" style="--c:#dc423b" aria-labelledby="carousel-t">
+    
+    <header class="sec-head head-left">
+      <svg class="doodle da" viewBox="0 0 64 64" aria-hidden="true"><use href="#d-star"/></svg>
+      <svg class="doodle db" viewBox="0 0 64 64" aria-hidden="true"><use href="#d-squiggle"/></svg>
+      <h2 class="sec-title" id="carousel-t"><span>Carousel</span></h2>
+      <ul class="tags"><li>LinkedIn</li><li>Instagram</li><li>Storytelling</li></ul>
+      <p class="sec-intro">Swipe-through carousels that turn one idea into a sequence, with a hook on slide one and a reason to keep going on every slide after.</p>
+    </header>
+    <div class="stack"><figure class="s-item"><a class="zoom " href="img/MAG1IkFfzm8.webp" data-w="2400" data-h="1184" aria-label="View larger: Video-hook carousel in red and white"><img src="img/t/MAG1IkFfzm8.webp" width="1400" height="691" alt="Video-hook carousel in red and white" loading="lazy" decoding="async"></a><figcaption>Video-hook carousel in red and white</figcaption></figure><figure class="s-item"><a class="zoom " href="img/MAG1Il-flbk.webp" data-w="2400" data-h="1097" aria-label="View larger: Content-creation carousel in cream and orange"><img src="img/t/MAG1Il-flbk.webp" width="1400" height="640" alt="Content-creation carousel in cream and orange" loading="lazy" decoding="async"></a><figcaption>Content-creation carousel in cream and orange</figcaption></figure><figure class="s-item"><a class="zoom " href="img/MAG1IkLKLZU.webp" data-w="2400" data-h="1155" aria-label="View larger: Engagement carousel in deep purple"><img src="img/t/MAG1IkLKLZU.webp" width="1400" height="673" alt="Engagement carousel in deep purple" loading="lazy" decoding="async"></a><figcaption>Engagement carousel in deep purple</figcaption></figure><figure class="s-item"><a class="zoom " href="img/MAG1It4bWcc.webp" data-w="2400" data-h="1456" aria-label="View larger: Learning-styles carousel in teal and black"><img src="img/t/MAG1It4bWcc.webp" width="1400" height="849" alt="Learning-styles carousel in teal and black" loading="lazy" decoding="async"></a><figcaption>Learning-styles carousel in teal and black</figcaption></figure><figure class="s-item"><a class="zoom " href="img/MAG1Ios4s5k.webp" data-w="2400" data-h="1226" aria-label="View larger: Sales-objection carousel in electric blue"><img src="img/t/MAG1Ios4s5k.webp" width="1400" height="715" alt="Sales-objection carousel in electric blue" loading="lazy" decoding="async"></a><figcaption>Sales-objection carousel in electric blue</figcaption></figure></div>
+  </section>
+  <section class="work" id="ui-ux" style="--c:#7d5fff" aria-labelledby="ui-ux-t">
+    
+    <header class="sec-head head-right">
+      <svg class="doodle da" viewBox="0 0 64 64" aria-hidden="true"><use href="#d-sparkle"/></svg>
+      <svg class="doodle db" viewBox="0 0 64 64" aria-hidden="true"><use href="#d-swirl"/></svg>
+      <h2 class="sec-title" id="ui-ux-t"><span>UI UX</span></h2>
+      <ul class="tags"><li>Figma</li><li>Landing pages</li><li>E-commerce</li><li>Web apps</li></ul>
+      <p class="sec-intro">Full page designs in Figma. The long pages scroll inside their frames, so you can read them top to bottom the way a visitor would.</p>
+    </header>
+    
+        <article class="project has-page">
+          <h3>EZ Onboarding</h3><p class="kind">Hiring platform</p>
+          <div class="p-body"><div class="p-page">
+      <figure class="browser">
+        <div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>ezonboarding.design</span></div>
+        <div class="browser-view" tabindex="0" role="region" aria-label="EZ Onboarding full page design, scrollable">
+          <img src="img/MAF5TasHvgA.webp" width="1536" height="5335" alt="EZ Onboarding full page design" loading="lazy" decoding="async">
+        </div>
+      </figure></div><div class="p-details"><figure><a class="zoom " href="img/MAF5WMfGfWY.webp" data-w="995" data-h="588" aria-label="View larger: EZ Onboarding screen"><img src="img/t/MAF5WMfGfWY.webp" width="995" height="588" alt="EZ Onboarding screen" loading="lazy" decoding="async"></a></figure><figure><a class="zoom " href="img/MAF5WJOc39Y.webp" data-w="825" data-h="591" aria-label="View larger: EZ Onboarding screen"><img src="img/t/MAF5WJOc39Y.webp" width="825" height="591" alt="EZ Onboarding screen" loading="lazy" decoding="async"></a></figure><figure><a class="zoom " href="img/MAF5WJSND4w.webp" data-w="772" data-h="335" aria-label="View larger: EZ Onboarding screen"><img src="img/t/MAF5WJSND4w.webp" width="772" height="335" alt="EZ Onboarding screen" loading="lazy" decoding="async"></a></figure><figure><a class="zoom " href="img/MAF5UETXaCg.webp" data-w="304" data-h="477" aria-label="View larger: EZ Onboarding screen"><img src="img/t/MAF5UETXaCg.webp" width="304" height="477" alt="EZ Onboarding screen" loading="lazy" decoding="async"></a></figure></div></div>
+        </article>
+        <article class="project has-page">
+          <h3>Match My Trip</h3><p class="kind">Travel booking site</p>
+          <div class="p-body"><div class="p-page">
+      <figure class="browser">
+        <div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>matchmytrip.design</span></div>
+        <div class="browser-view" tabindex="0" role="region" aria-label="Match My Trip full page design, scrollable">
+          <img src="img/MAF5TKZqeAk.webp" width="1536" height="4828" alt="Match My Trip full page design" loading="lazy" decoding="async">
+        </div>
+      </figure></div><div class="p-details"><figure><a class="zoom " href="img/MAF5WMF5LTw.webp" data-w="1351" data-h="668" aria-label="View larger: Match My Trip screen"><img src="img/t/MAF5WMF5LTw.webp" width="1351" height="668" alt="Match My Trip screen" loading="lazy" decoding="async"></a></figure><figure><a class="zoom " href="img/MAF5WAiWaXI.webp" data-w="1492" data-h="1632" aria-label="View larger: Match My Trip screen"><img src="img/t/MAF5WAiWaXI.webp" width="1400" height="1531" alt="Match My Trip screen" loading="lazy" decoding="async"></a></figure><figure><a class="zoom " href="img/MAF5WEVV4rs.webp" data-w="1186" data-h="636" aria-label="View larger: Match My Trip screen"><img src="img/t/MAF5WEVV4rs.webp" width="1186" height="636" alt="Match My Trip screen" loading="lazy" decoding="async"></a></figure></div></div>
+        </article>
+        <article class="project has-page">
+          <h3>Lunar Silks</h3><p class="kind">Bedding e-commerce store</p>
+          <div class="p-body"><div class="p-page">
+      <figure class="browser">
+        <div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>lunarsilks.design</span></div>
+        <div class="browser-view" tabindex="0" role="region" aria-label="Lunar Silks full page design, scrollable">
+          <img src="img/MAF9O9RrBFM.webp" width="1536" height="8164" alt="Lunar Silks full page design" loading="lazy" decoding="async">
+        </div>
+      </figure></div><div class="p-details"><figure><a class="zoom " href="img/MAF9OyRb2o0.webp" data-w="1536" data-h="1651" aria-label="View larger: Lunar Silks screen"><img src="img/t/MAF9OyRb2o0.webp" width="1400" height="1505" alt="Lunar Silks screen" loading="lazy" decoding="async"></a></figure><figure><a class="zoom " href="img/MAF9O5rg1_o.webp" data-w="1536" data-h="846" aria-label="View larger: Lunar Silks screen"><img src="img/t/MAF9O5rg1_o.webp" width="1400" height="771" alt="Lunar Silks screen" loading="lazy" decoding="async"></a></figure><figure><a class="zoom " href="img/MAF9O8SFxhM.webp" data-w="1536" data-h="1915" aria-label="View larger: Lunar Silks screen"><img src="img/t/MAF9O8SFxhM.webp" width="1400" height="1745" alt="Lunar Silks screen" loading="lazy" decoding="async"></a></figure><figure><a class="zoom " href="img/MAF9O1tmR34.webp" data-w="1536" data-h="2198" aria-label="View larger: Lunar Silks screen"><img src="img/t/MAF9O1tmR34.webp" width="1400" height="2003" alt="Lunar Silks screen" loading="lazy" decoding="async"></a></figure></div></div>
+        </article>
+        <article class="project has-pages">
+          <h3>TPB Membership</h3><p class="kind">Tourism membership portal, three directions</p>
+          <div class="p-body"><div class="p-pages">
+      <figure class="browser">
+        <div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>direction 1</span></div>
+        <div class="browser-view" tabindex="0" role="region" aria-label="TPB Membership direction 1, scrollable">
+          <img src="img/MAF5T6D8U6Y.webp" width="1344" height="7887" alt="TPB Membership direction 1" loading="lazy" decoding="async">
+        </div>
+      </figure>
+      <figure class="browser">
+        <div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>direction 2</span></div>
+        <div class="browser-view" tabindex="0" role="region" aria-label="TPB Membership direction 2, scrollable">
+          <img src="img/MAF5UC3SwAA.webp" width="1323" height="7810" alt="TPB Membership direction 2" loading="lazy" decoding="async">
+        </div>
+      </figure>
+      <figure class="browser">
+        <div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>direction 3</span></div>
+        <div class="browser-view" tabindex="0" role="region" aria-label="TPB Membership direction 3, scrollable">
+          <img src="img/MAF5UBFU5ZE.webp" width="1344" height="7881" alt="TPB Membership direction 3" loading="lazy" decoding="async">
+        </div>
+      </figure></div></div>
+        </article>
+        <article class="project solo">
+          <h3>Carmen&#x27;s Best</h3><p class="kind">Dairy shop, desktop and mobile</p>
+          <div class="p-body"><div class="p-details"><figure><a class="zoom " href="img/MAG1L7A57Ms.webp" data-w="2400" data-h="1415" aria-label="View larger: Carmen&#x27;s Best screen"><img src="img/t/MAG1L7A57Ms.webp" width="1400" height="825" alt="Carmen&#x27;s Best screen" loading="lazy" decoding="async"></a></figure></div></div>
+        </article>
+        <article class="project solo">
+          <h3>Affiliate program</h3><p class="kind">Landing page</p>
+          <div class="p-body"><div class="p-details"><figure><a class="zoom " href="img/MAG1L0aDaGA.webp" data-w="2400" data-h="1639" aria-label="View larger: Affiliate program screen"><img src="img/t/MAG1L0aDaGA.webp" width="1400" height="956" alt="Affiliate program screen" loading="lazy" decoding="async"></a></figure></div></div>
+        </article>
+  </section>
+  <section class="work" id="websites" style="--c:#a982b5" aria-labelledby="websites-t">
+    
+    <header class="sec-head head-left">
+      <svg class="doodle da" viewBox="0 0 64 64" aria-hidden="true"><use href="#d-heart"/></svg>
+      <svg class="doodle db" viewBox="0 0 64 64" aria-hidden="true"><use href="#d-star"/></svg>
+      <h2 class="sec-title" id="websites-t"><span>Websites</span></h2>
+      <ul class="tags"><li>Live builds</li><li>Vercel</li></ul>
+      <p class="sec-intro">Two cosy little web apps, designed and shipped. Both are live, so go and play.</p>
+    </header>
+    
+        <article class="site-card" style="--acc:#b38663">
+          <div class="site-copy">
+            <h3>Cozy Café</h3>
+            <p>Run a tiny café: decorate the room, stock the pantry, keep your regulars happy.</p>
+            <a class="btn" href="https://cozycafe-ten.vercel.app" target="_blank" rel="noopener">Play Cozy Café<span class="sr-only"> (opens in a new tab)</span></a>
+            <p class="host">cozycafe-ten.vercel.app</p>
+          </div>
+          <figure class="site-hero">
+            <div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>cozycafe-ten.vercel.app</span></div>
+            <a class="zoom " href="img/MAHXy4J-bOI.webp" data-w="1509" data-h="704" aria-label="View larger: Cozy Café home screen"><img src="img/t/MAHXy4J-bOI.webp" width="1400" height="653" alt="Cozy Café home screen" loading="lazy" decoding="async"></a>
+          </figure>
+          <div class="site-thumbs"><figure><a class="zoom " href="img/MAHXzNdPmOY.webp" data-w="1518" data-h="748" aria-label="View larger: Cozy Café screen"><img src="img/t/MAHXzNdPmOY.webp" width="1400" height="690" alt="Cozy Café screen" loading="lazy" decoding="async"></a></figure><figure><a class="zoom " href="img/MAHXzJhx7hI.webp" data-w="1518" data-h="755" aria-label="View larger: Cozy Café screen"><img src="img/t/MAHXzJhx7hI.webp" width="1400" height="696" alt="Cozy Café screen" loading="lazy" decoding="async"></a></figure><figure><a class="zoom " href="img/MAHXzJEh510.webp" data-w="1512" data-h="665" aria-label="View larger: Cozy Café screen"><img src="img/t/MAHXzJEh510.webp" width="1400" height="616" alt="Cozy Café screen" loading="lazy" decoding="async"></a></figure><figure><a class="zoom " href="img/MAHXzHrbiPk.webp" data-w="1143" data-h="314" aria-label="View larger: Cozy Café screen"><img src="img/t/MAHXzHrbiPk.webp" width="1143" height="314" alt="Cozy Café screen" loading="lazy" decoding="async"></a></figure></div>
+        </article>
+        <article class="site-card" style="--acc:#dd3d93">
+          <div class="site-copy">
+            <h3>My Little Pet</h3>
+            <p>A pocket pup to feed, dress up and decorate for, with a memory book of your days together.</p>
+            <a class="btn" href="https://my-little-pet.vercel.app" target="_blank" rel="noopener">Play My Little Pet<span class="sr-only"> (opens in a new tab)</span></a>
+            <p class="host">my-little-pet.vercel.app</p>
+          </div>
+          <figure class="site-hero">
+            <div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>my-little-pet.vercel.app</span></div>
+            <a class="zoom " href="img/MAHXzHia3HA.webp" data-w="1519" data-h="751" aria-label="View larger: My Little Pet home screen"><img src="img/t/MAHXzHia3HA.webp" width="1400" height="692" alt="My Little Pet home screen" loading="lazy" decoding="async"></a>
+          </figure>
+          <div class="site-thumbs"><figure><a class="zoom " href="img/MAHXzNmaV8Q.webp" data-w="477" data-h="700" aria-label="View larger: My Little Pet screen"><img src="img/t/MAHXzNmaV8Q.webp" width="477" height="700" alt="My Little Pet screen" loading="lazy" decoding="async"></a></figure><figure><a class="zoom " href="img/MAHXzDphBq8.webp" data-w="1468" data-h="668" aria-label="View larger: My Little Pet screen"><img src="img/t/MAHXzDphBq8.webp" width="1400" height="637" alt="My Little Pet screen" loading="lazy" decoding="async"></a></figure><figure><a class="zoom " href="img/MAHXzL8GTGw.webp" data-w="812" data-h="572" aria-label="View larger: My Little Pet screen"><img src="img/t/MAHXzL8GTGw.webp" width="812" height="572" alt="My Little Pet screen" loading="lazy" decoding="async"></a></figure></div>
+        </article>
+  </section>
+  <section class="work" id="tech-infographic" style="--c:#269731" aria-labelledby="tech-infographic-t">
+    
+    <header class="sec-head head-right">
+      <svg class="doodle da" viewBox="0 0 64 64" aria-hidden="true"><use href="#d-squiggle"/></svg>
+      <svg class="doodle db" viewBox="0 0 64 64" aria-hidden="true"><use href="#d-sparkle"/></svg>
+      <h2 class="sec-title" id="tech-infographic-t"><span>Infographic</span></h2>
+      <ul class="tags"><li>SaaS</li><li>Cybersecurity</li><li>Data storytelling</li></ul>
+      <p class="sec-intro">Explainers for SaaS and security brands like Reco, Novee and Gyro: dense ideas made scannable in one glance.</p>
+    </header>
+    <div class="grid"><figure class="m-item m-sq" style="--r:1.000"><a class="zoom " href="img/MAHE2q-xh40.webp" data-w="960" data-h="960" aria-label="View larger: Reco: actual SaaS risk surface"><img src="img/t/MAHE2q-xh40.webp" width="960" height="960" alt="Reco: actual SaaS risk surface" loading="lazy" decoding="async"></a><figcaption>Reco: actual SaaS risk surface</figcaption></figure><figure class="m-item m-sq" style="--r:1.000"><a class="zoom " href="img/MAHE2qPXeuo.webp" data-w="960" data-h="960" aria-label="View larger: Reco: why AI bypasses user-centric security controls"><img src="img/t/MAHE2qPXeuo.webp" width="960" height="960" alt="Reco: why AI bypasses user-centric security controls" loading="lazy" decoding="async"></a><figcaption>Reco: why AI bypasses user-centric security controls</figcaption></figure><figure class="m-item m-sq" style="--r:1.000"><a class="zoom " href="img/MAHE2rUEbws.webp" data-w="960" data-h="960" aria-label="View larger: Reco: the new insider, AI with trusted access"><img src="img/t/MAHE2rUEbws.webp" width="960" height="960" alt="Reco: the new insider, AI with trusted access" loading="lazy" decoding="async"></a><figcaption>Reco: the new insider, AI with trusted access</figcaption></figure><figure class="m-item m-sq" style="--r:0.992"><a class="zoom " href="img/MAHE2gISsVM.webp" data-w="779" data-h="785" aria-label="View larger: Reco: how Reco strengthens ChatGPT Enterprise security"><img src="img/t/MAHE2gISsVM.webp" width="779" height="785" alt="Reco: how Reco strengthens ChatGPT Enterprise security" loading="lazy" decoding="async"></a><figcaption>Reco: how Reco strengthens ChatGPT Enterprise security</figcaption></figure><figure class="m-item m-sq" style="--r:1.000"><a class="zoom " href="img/MAHE2rJCDBY.webp" data-w="753" data-h="753" aria-label="View larger: Reco: Samsung data leak, when productivity meets exposure"><img src="img/t/MAHE2rJCDBY.webp" width="753" height="753" alt="Reco: Samsung data leak, when productivity meets exposure" loading="lazy" decoding="async"></a><figcaption>Reco: Samsung data leak, when productivity meets exposure</figcaption></figure><figure class="m-item m-port" style="--r:0.804"><a class="zoom " href="img/MAHE2gxVG9A.webp" data-w="585" data-h="728" aria-label="View larger: Reco: turning hidden AI cost into controlled value"><img src="img/t/MAHE2gxVG9A.webp" width="585" height="728" alt="Reco: turning hidden AI cost into controlled value" loading="lazy" decoding="async"></a><figcaption>Reco: turning hidden AI cost into controlled value</figcaption></figure><figure class="m-item m-wide" style="--r:1.912"><a class="zoom " href="img/MAHE2mjSgek.webp" data-w="960" data-h="502" aria-label="View larger: Reco: identity-driven exposure control across SaaS and AI"><img src="img/t/MAHE2mjSgek.webp" width="960" height="502" alt="Reco: identity-driven exposure control across SaaS and AI" loading="lazy" decoding="async"></a><figcaption>Reco: identity-driven exposure control across SaaS and AI</figcaption></figure><figure class="m-item m-wide" style="--r:1.903"><a class="zoom " href="img/MAHE2hbdt6g.webp" data-w="744" data-h="391" aria-label="View larger: Reco: AI governance that catches threats before they escalate"><img src="img/t/MAHE2hbdt6g.webp" width="744" height="391" alt="Reco: AI governance that catches threats before they escalate" loading="lazy" decoding="async"></a><figcaption>Reco: AI governance that catches threats before they escalate</figcaption></figure><figure class="m-item m-sq" style="--r:1.000"><a class="zoom " href="img/MAHE2jixIVo.webp" data-w="960" data-h="960" aria-label="View larger: Novee: how Novee AI discovered CVE-2025-10240 in Progress Flowmon"><img src="img/t/MAHE2jixIVo.webp" width="960" height="960" alt="Novee: how Novee AI discovered CVE-2025-10240 in Progress Flowmon" loading="lazy" decoding="async"></a><figcaption>Novee: how Novee AI discovered CVE-2025-10240 in Progress Flowmon</figcaption></figure><figure class="m-item m-sq" style="--r:1.000"><a class="zoom " href="img/MAHE2mvd6O0.webp" data-w="960" data-h="960" aria-label="View larger: Novee: Change Healthcare breach timeline"><img src="img/t/MAHE2mvd6O0.webp" width="960" height="960" alt="Novee: Change Healthcare breach timeline" loading="lazy" decoding="async"></a><figcaption>Novee: Change Healthcare breach timeline</figcaption></figure><figure class="m-item m-wide" style="--r:1.912"><a class="zoom " href="img/MAHE2urWbHE.webp" data-w="1440" data-h="753" aria-label="View larger: Novee: same behavior, different understanding"><img src="img/t/MAHE2urWbHE.webp" width="1400" height="732" alt="Novee: same behavior, different understanding" loading="lazy" decoding="async"></a><figcaption>Novee: same behavior, different understanding</figcaption></figure><figure class="m-item m-wide" style="--r:1.912"><a class="zoom " href="img/MAHE2iU3gx8.webp" data-w="960" data-h="502" aria-label="View larger: Novee: from 3 findings to 16 with an agent swarm"><img src="img/t/MAHE2iU3gx8.webp" width="960" height="502" alt="Novee: from 3 findings to 16 with an agent swarm" loading="lazy" decoding="async"></a><figcaption>Novee: from 3 findings to 16 with an agent swarm</figcaption></figure><figure class="m-item m-sq" style="--r:1.000"><a class="zoom " href="img/MAHE2tAikCw.webp" data-w="960" data-h="960" aria-label="View larger: Novee: the noise machine"><img src="img/t/MAHE2tAikCw.webp" width="960" height="960" alt="Novee: the noise machine" loading="lazy" decoding="async"></a><figcaption>Novee: the noise machine</figcaption></figure><figure class="m-item m-port" style="--r:0.800"><a class="zoom " href="img/MAHE2kYTYLg.webp" data-w="756" data-h="945" aria-label="View larger: Novee: detection creates volume, closure reduces risk"><img src="img/t/MAHE2kYTYLg.webp" width="756" height="945" alt="Novee: detection creates volume, closure reduces risk" loading="lazy" decoding="async"></a><figcaption>Novee: detection creates volume, closure reduces risk</figcaption></figure><figure class="m-item m-sq" style="--r:1.000"><a class="zoom " href="img/MAHE2nNUDUU.webp" data-w="967" data-h="967" aria-label="View larger: Gyro: AI companies reach $30M in revenue 3x faster than SaaS"><img src="img/t/MAHE2nNUDUU.webp" width="967" height="967" alt="Gyro: AI companies reach $30M in revenue 3x faster than SaaS" loading="lazy" decoding="async"></a><figcaption>Gyro: AI companies reach $30M in revenue 3x faster than SaaS</figcaption></figure><figure class="m-item m-sq" style="--r:1.000"><a class="zoom " href="img/MAHE2peZQ9Q.webp" data-w="967" data-h="967" aria-label="View larger: Gyro: flight compensation process map"><img src="img/t/MAHE2peZQ9Q.webp" width="967" height="967" alt="Gyro: flight compensation process map" loading="lazy" decoding="async"></a><figcaption>Gyro: flight compensation process map</figcaption></figure></div>
+  </section>
+  </div>
+
+  <section class="outro" aria-labelledby="outro-t">
+    <svg class="o-star" viewBox="0 0 64 64" aria-hidden="true"><use href="#d-star"/></svg>
+    <h2 id="outro-t">Got a project in mind?</h2>
+    <p>I'm open to freelance and remote work: brand sets, ads, carousels, UI and landing pages.</p>
+    <a class="btn big" href="mailto:dannajerceelayderos@gmail.com">Email me</a>
+    <p class="outro-alt">dannajerceelayderos@gmail.com · or call <a href="tel:+639219636667">0921 963 6667</a></p>
+  </section>
+</main>
+
+<footer class="foot"><p>© 2026 Danna Jercee Patiam Layderos</p><a href="#top">Back to top</a></footer>
+
+<dialog class="lightbox" aria-label="Image viewer">
+  <button class="lb-close" aria-label="Close">×</button>
+  <button class="lb-prev" aria-label="Previous image">‹</button>
+  <figure><img alt=""><figcaption></figcaption></figure>
+  <button class="lb-next" aria-label="Next image">›</button>
+</dialog>
+<script>(() => {
+  // ----- lightbox -----
+  const dlg = document.querySelector(".lightbox");
+  const lbImg = dlg.querySelector("img");
+  const lbCap = dlg.querySelector("figcaption");
+  const links = [...document.querySelectorAll("a.zoom")];
+  let idx = 0;
+
+  function show(i) {
+    idx = (i + links.length) % links.length;
+    const a = links[idx];
+    const alt = a.querySelector("img").alt;
+    const w = +a.dataset.w, h = +a.dataset.h;
+    dlg.classList.toggle("is-tall", h / w > 1.8);
+    lbImg.src = a.href;
+    lbImg.alt = alt;
+    lbImg.width = w; lbImg.height = h;
+    lbCap.textContent = alt;
+    dlg.querySelector("figure").scrollTop = 0;
+  }
+
+  links.forEach((a, i) => a.addEventListener("click", (ev) => {
+    ev.preventDefault();
+    show(i);
+    dlg.showModal();
+  }));
+  dlg.querySelector(".lb-close").addEventListener("click", () => dlg.close());
+  dlg.querySelector(".lb-prev").addEventListener("click", () => show(idx - 1));
+  dlg.querySelector(".lb-next").addEventListener("click", () => show(idx + 1));
+  dlg.addEventListener("click", (ev) => { if (ev.target === dlg || ev.target.tagName === "FIGURE") dlg.close(); });
+  dlg.addEventListener("keydown", (ev) => {
+    if (ev.key === "ArrowRight") show(idx + 1);
+    if (ev.key === "ArrowLeft") show(idx - 1);
+  });
+
+  // ----- highlight the section you're in -----
+  const navLinks = new Map([...document.querySelectorAll(".topbar nav a")].map((a) => [a.hash.slice(1), a]));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((en) => {
+      if (!en.isIntersecting) return;
+      navLinks.forEach((a) => a.classList.remove("is-on"));
+      const a = navLinks.get(en.target.id);
+      if (a) {
+        a.classList.add("is-on");
+        a.scrollIntoView({ block: "nearest", inline: "center", behavior: "smooth" });
+      }
+    });
+  }, { rootMargin: "-45% 0px -50% 0px" });
+  document.querySelectorAll("section.work").forEach((s) => io.observe(s));
+})();
+</script>
