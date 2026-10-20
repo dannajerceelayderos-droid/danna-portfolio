@@ -517,6 +517,17 @@ button { font: inherit; color: inherit; }
 .ad-car-blue .ad-slide .zoom { box-shadow: 0 30px 60px -28px rgb(20 70 200 / .55), 0 0 0 6px #fff; }
 .ad-car-blue .ad-nav:hover { background: #1a5cf0; }
 
+
+/* Eye Muse: pastel sky stage with 3D sparkles */
+.ad-car-sky { isolation: isolate; padding: clamp(18px, 3vw, 34px) clamp(16px, 3vw, 40px) clamp(22px, 3vw, 30px); margin-inline: calc(-1 * clamp(16px, 3vw, 40px)); border-radius: 30px;
+  --c: #5b86e5;
+  background: radial-gradient(30% 22% at 18% 20%, #ffffff 0%, transparent 70%), radial-gradient(26% 18% at 80% 82%, #ffffff 0%, transparent 70%), radial-gradient(60% 60% at 50% 45%, #f4f8ff 0%, transparent 70%), linear-gradient(170deg, #dce9ff, #c8dcff 55%, #e6efff); }
+.ad-car-sky > :not(.gummy-canvas) { position: relative; z-index: 2; }
+.ad-car-sky .ad-view { margin-inline: calc(-1 * clamp(16px, 3vw, 40px)); }
+.ad-car-sky .ad-car-head h3 { color: #4a6fd1; }
+.ad-car-sky .ad-car-head .kind { color: #4a6fd1; }
+.ad-car-sky .ad-nav:hover { background: #5b86e5; }
+
 /* websites */
 .site-card {
   position: relative; display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: clamp(20px, 3vw, 44px); align-items: center;
