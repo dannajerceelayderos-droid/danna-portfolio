@@ -494,6 +494,19 @@ button { font: inherit; color: inherit; }
 }
 @media (prefers-reduced-motion: reduce) { .fb-leaf, .fb-book { transition-duration: .01s; } }
 
+
+/* Nyva AlcoBlock: pink stage with floating 3D gummies and apples */
+.ad-car + .ad-car { margin-top: clamp(48px, 7vw, 80px); }
+.ad-car-gummies { isolation: isolate; padding: clamp(18px, 3vw, 34px) clamp(16px, 3vw, 40px) clamp(22px, 3vw, 30px); margin-inline: calc(-1 * clamp(16px, 3vw, 40px)); border-radius: 30px;
+  background: radial-gradient(60% 60% at 50% 40%, #fff1f3 0%, transparent 70%), radial-gradient(40% 50% at 10% 90%, #ffd0d8, transparent 70%), radial-gradient(40% 50% at 92% 10%, #ffd6dd, transparent 70%), linear-gradient(160deg, #ffe4e8, #ffc7d1);
+  --c: #d4142a; }
+.ad-car-gummies > :not(.gummy-canvas) { position: relative; z-index: 2; }
+.gummy-canvas { position: absolute; z-index: 3; inset: -70px -2% -60px; width: 104%; height: calc(100% + 130px); pointer-events: none; }
+.ad-car-gummies .ad-view { margin-inline: calc(-1 * clamp(16px, 3vw, 40px)); }
+.ad-car-gummies .ad-slide .zoom { box-shadow: 0 30px 60px -28px rgb(180 10 30 / .55), 0 0 0 6px #fff; }
+.ad-car-gummies .ad-car-head h3 { color: #b0101f; }
+@media (max-width: 760px) { .gummy-canvas { inset: -40px 0 -30px; width: 100%; height: calc(100% + 70px); } }
+
 /* websites */
 .site-card {
   position: relative; display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: clamp(20px, 3vw, 44px); align-items: center;
