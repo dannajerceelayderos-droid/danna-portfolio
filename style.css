@@ -528,6 +528,22 @@ button { font: inherit; color: inherit; }
 .ad-car-sky .ad-car-head .kind { color: #4a6fd1; }
 .ad-car-sky .ad-nav:hover { background: #5b86e5; }
 
+
+/* Luminark: dark purple stage with neon glow */
+.ad-car-night { isolation: isolate; padding: clamp(18px, 3vw, 34px) clamp(16px, 3vw, 40px) clamp(22px, 3vw, 30px); margin-inline: calc(-1 * clamp(16px, 3vw, 40px)); border-radius: 30px; overflow: hidden;
+  --c: #ff4fb8;
+  background: radial-gradient(45% 55% at 50% 45%, rgb(122 70 255 / .45) 0%, transparent 70%), radial-gradient(30% 40% at 8% 90%, rgb(255 79 184 / .35), transparent 70%), radial-gradient(30% 40% at 95% 8%, rgb(96 70 255 / .4), transparent 70%), linear-gradient(160deg, #1a0b3a, #0f0624 60%, #200a3c); }
+.ad-car-night::before { content: ""; position: absolute; inset: 0; z-index: -1; background-image: radial-gradient(circle, rgb(255 255 255 / .7) 0 1px, transparent 1.5px), radial-gradient(circle, rgb(255 180 230 / .5) 0 1px, transparent 1.5px); background-size: 90px 90px, 140px 140px; background-position: 10px 20px, 60px 80px; opacity: .6; }
+.ad-car-night .ad-view { margin-inline: calc(-1 * clamp(16px, 3vw, 40px)); }
+.ad-car-night .ad-car-head h3 { color: #fff; text-shadow: 0 0 18px rgb(160 110 255 / .8); }
+.ad-car-night .ad-car-head .kind { color: #7a3ff0; }
+.ad-car-night .ad-count { color: #c9b8ff; }
+.ad-car-night .ad-hint { color: #c9b8ff; }
+.ad-car-night .ad-slide .zoom { box-shadow: 0 0 0 6px #fff, 0 0 50px -6px rgb(255 79 184 / .55), 0 30px 60px -28px rgb(0 0 0 / .8); }
+.ad-car-night .ad-dot { background: rgb(255 255 255 / .3); }
+.ad-car-night .ad-dot.is-on { background: #ff4fb8; }
+.ad-car-night .ad-nav:hover { background: #ff4fb8; }
+
 /* websites */
 .site-card {
   position: relative; display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: clamp(20px, 3vw, 44px); align-items: center;
