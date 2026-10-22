@@ -545,6 +545,12 @@ button { font: inherit; color: inherit; }
 .ad-car-night .ad-nav:hover { background: #ff4fb8; }
 
 /* websites */
+.site-feats { display: flex; flex-wrap: wrap; gap: 6px; margin: -8px 0 22px; max-width: 34em; }
+.site-feats li { font: 700 .6rem/1.2 var(--pixel); text-transform: uppercase; letter-spacing: .03em; padding: 6px 9px; border-radius: 8px; background: #fff; color: var(--plum); box-shadow: 0 0 0 1.5px color-mix(in srgb, var(--acc) 35%, #fff); }
+.site-feats li::before { content: "♡ "; color: var(--acc); }
+.mochi-scene { background: #e9dcff; }
+.mochi-scene .peek { top: 14px; bottom: auto; }
+
 .site-card {
   position: relative; display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: clamp(20px, 3vw, 44px); align-items: center;
   padding: clamp(18px, 3vw, 36px); margin-bottom: clamp(20px, 3vw, 32px); border-radius: 36px;
